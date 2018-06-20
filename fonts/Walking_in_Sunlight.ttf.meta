@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 60ddad01c4f6545b79a36702299515dc
+timeCreated: 1495900707
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: 'Walking in Sunlight '
+  fontNames:
+  - 'Walking in Sunlight '
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
