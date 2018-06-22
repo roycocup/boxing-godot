@@ -7,7 +7,10 @@ path="res://.import/boxing.png-5937a7ea24adbfc45bef9ea9d4014354.stex"
 [deps]
 
 source_file="res://images/boxing.png"
+source_md5="cc4b0f26207fa116a6b2e1caadb723c0"
+
 dest_files=[ "res://.import/boxing.png-5937a7ea24adbfc45bef9ea9d4014354.stex" ]
+dest_md5="9271010793baa1fcbe4e47031c4e50f1"
 
 [params]
 
