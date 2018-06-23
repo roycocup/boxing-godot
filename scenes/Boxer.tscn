@@ -40,7 +40,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-speed = 1
+velocity = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -51,8 +51,8 @@ shape = SubResource( 1 )
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 4
-frame = 10
-_sections_unfolded = [ "Animation", "Region" ]
+frame = 7
+_sections_unfolded = [ "Animation" ]
 
 [node name="Player" type="AnimationPlayer" parent="." index="2"]
 
