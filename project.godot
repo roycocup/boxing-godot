@@ -12,6 +12,8 @@ config_version=3
 
 config/name="Boxing"
 run/main_scene="res://scenes/World.tscn"
+run/low_processor_mode=true
+boot_splash/fullsize=false
 config/icon="res://icon.png"
 
 [rendering]
