@@ -47,7 +47,8 @@ func animate():
 		status.RIGHT:
 			$Player.play("Right")
 		status.IDLE:
-			$Player.play("Idle")
+			if not $Player.is_playing():
+				$Player.play("Idle")
 		
 func change_status(finished_animation):
 	if (cur_status != status.IDLE):
