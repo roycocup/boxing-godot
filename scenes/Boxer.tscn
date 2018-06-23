@@ -51,7 +51,7 @@ shape = SubResource( 1 )
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 4
-frame = 9
+frame = 10
 _sections_unfolded = [ "Animation", "Region" ]
 
 [node name="Player" type="AnimationPlayer" parent="." index="2"]

@@ -21,4 +21,11 @@ func _process(delta):
 	if Input.is_key_pressed(KEY_Z):
 		cur_status = status.LEFT
 		$Player.play("Left")
+
+	if Input.is_key_pressed(KEY_X):
+		cur_status = status.RIGHT
+		$Player.play("Right")		
 		
+	if Input.is_key_pressed(KEY_0):
+		cur_status = status.HIT
+		$Player.play("Hit")
