@@ -1,15 +1,16 @@
 extends KinematicBody2D
 
 export var velocity = 1
-
+var pos
 enum status {IDLE, RIGHT, LEFT, HIT}
 var cur_status
 
 func _ready():
+	pos = Vector2()
 	cur_status = status.IDLE
 	$Player.connect("animation_finished", self, "change_status")
 
-func _process(delta):
+func _physics_process(delta):
 	if (cur_status == status.IDLE):
 		listen_to_keys()
 		animate()
@@ -29,15 +30,13 @@ func shots():
 
 func movement():
 	if Input.is_action_pressed("ui_right"):
-		position.x += (speed + position.x) * get_process_delta_time()
+		move_and_slide(Vector2(velocity, 0), Vector2())
 	if Input.is_action_pressed("ui_left"):
-		position.x -= (speed + position.x) * get_process_delta_time()
+		move_and_slide(Vector2(-velocity, 0), Vector2())
 	if Input.is_action_pressed("ui_up"):
-		position.y -= (speed + position.y) * get_process_delta_time()
+		move_and_slide(Vector2(0, -velocity), Vector2())
 	if Input.is_action_pressed("ui_down"):
-		position.y += (speed + position.y) * get_process_delta_time()
-	 move_and_slide( velocity, Vector2(0, -1) )
-		
+		move_and_slide(Vector2(0, velocity), Vector2())		
 		
 func animate():
 	match cur_status:
