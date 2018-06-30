@@ -21,9 +21,9 @@ func listen_to_keys():
 	shots()
 
 func shots():
-	if Input.is_key_pressed(KEY_Z):
+	if Input.is_action_just_pressed("fire_1"):
 		cur_status = status.LEFT
-	if Input.is_key_pressed(KEY_X):
+	if Input.is_action_just_pressed("fire_2"):
 		cur_status = status.RIGHT		
 	if Input.is_key_pressed(KEY_0):
 		cur_status = status.HIT
