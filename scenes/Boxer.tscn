@@ -10,12 +10,12 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 7.25561, 6.70537 )
+extents = Vector2( 31.886, 27.0067 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 22.857, 19.9245 )
+extents = Vector2( 16.6181, 28.8217 )
 
 [node name="Boxer" type="KinematicBody2D" index="0"]
 
@@ -31,7 +31,7 @@ velocity = 100
 texture = ExtResource( 2 )
 offset = Vector2( 32, 0 )
 hframes = 20
-frame = 12
+frame = 2
 _sections_unfolded = [ "Animation", "Offset" ]
 
 [node name="Player" type="AnimationPlayer" parent="." index="1"]
@@ -50,40 +50,49 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="Hitbox" type="Area2D" parent="." index="2"]
 
+position = Vector2( 5.06957, 0.376141 )
+scale = Vector2( 0.190413, 0.193939 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 2
+collision_mask = 4
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
 
-position = Vector2( 5.27942, 0.273073 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="LeftHand" type="Area2D" parent="." index="3"]
 
-position = Vector2( 3.27879, -16.494 )
-scale = Vector2( 0.334462, 0.281372 )
+position = Vector2( 8.36933, -16.4117 )
+scale = Vector2( 0.252595, 0.215327 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 6
+collision_mask = 6
 audio_bus_override = false
 audio_bus_name = "Master"
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftHand" index="0"]
 
-position = Vector2( -2.03173, 3.62263 )
+position = Vector2( 16.5173, 0 )
 shape = SubResource( 2 )
-_sections_unfolded = [ "Transform" ]
+disabled = true
+_sections_unfolded = [ "Material", "Visibility" ]
 
 [node name="RightHand2" type="Area2D" parent="." index="4"]
 
@@ -98,9 +107,6 @@ audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightHand2" index="0"]
-
-position = Vector2( -1.01586, 0 )
-shape = SubResource( 2 )
+[connection signal="area_shape_entered" from="Hitbox" to="." method="_on_Hitbox_area_shape_entered"]
 
 

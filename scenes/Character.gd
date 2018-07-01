@@ -4,6 +4,7 @@ export var velocity = 1
 var pos
 enum status {IDLE, RIGHT, LEFT, HIT}
 var cur_status
+var hit = false
 
 func _ready():
 	pos = Vector2()

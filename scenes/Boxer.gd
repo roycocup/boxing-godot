@@ -38,3 +38,9 @@ func animate():
 				$Player.play("Idle")
 		
 
+
+
+func _on_Hitbox_area_shape_entered(area_id, area, area_shape, self_shape):
+	cur_status = status.HIT
+	$Player.play("Hit")
+	cur_status = status.IDLE
