@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Boxer.gd" type="Script" id=1]
 [ext_resource path="res://images/boxersprite2.png" type="Texture" id=2]
@@ -10,7 +10,12 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 7.25561, 6.70537 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 22.857, 19.9245 )
 
 [node name="Boxer" type="KinematicBody2D" index="0"]
 
@@ -19,24 +24,17 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 velocity = 100
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
-
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="." index="1"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 2 )
 offset = Vector2( 32, 0 )
 hframes = 20
-frame = 2
+frame = 12
 _sections_unfolded = [ "Animation", "Offset" ]
 
-[node name="Player" type="AnimationPlayer" parent="." index="2"]
+[node name="Player" type="AnimationPlayer" parent="." index="1"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -49,5 +47,60 @@ anims/Left = ExtResource( 5 )
 anims/Right = ExtResource( 6 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
+
+[node name="Hitbox" type="Area2D" parent="." index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
+
+position = Vector2( 5.27942, 0.273073 )
+shape = SubResource( 1 )
+
+[node name="LeftHand" type="Area2D" parent="." index="3"]
+
+position = Vector2( 3.27879, -16.494 )
+scale = Vector2( 0.334462, 0.281372 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftHand" index="0"]
+
+position = Vector2( -2.03173, 3.62263 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="RightHand2" type="Area2D" parent="." index="4"]
+
+position = Vector2( 3.44868, 16.9734 )
+scale = Vector2( 0.334462, 0.281372 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightHand2" index="0"]
+
+position = Vector2( -1.01586, 0 )
+shape = SubResource( 2 )
 
 

@@ -1,25 +1,12 @@
-extends KinematicBody2D
+extends "res://scenes/Character.gd"
 
-export var velocity = 1
-var pos
-enum status {IDLE, RIGHT, LEFT, HIT}
-var cur_status
-
-func _ready():
-	pos = Vector2()
-	cur_status = status.IDLE
-	$Player.connect("animation_finished", self, "change_status")
 
 func _physics_process(delta):
 	if (cur_status == status.IDLE):
-		listen_to_keys()
+		movement()
+		shots()
 		animate()
-
-
-func listen_to_keys():
-	movement()
-	shots()
-
+	
 func shots():
 	if Input.is_action_just_pressed("fire_1"):
 		cur_status = status.LEFT
@@ -50,10 +37,4 @@ func animate():
 			if not $Player.is_playing():
 				$Player.play("Idle")
 		
-func change_status(finished_animation):
-	if (cur_status != status.IDLE):
-		reset_status()
-		
-func reset_status():
-	cur_status = status.IDLE
 

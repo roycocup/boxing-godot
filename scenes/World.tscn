@@ -16,5 +16,6 @@ _sections_unfolded = [ "Transform" ]
 [node name="Opponent" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 640, 256 )
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
 
 
