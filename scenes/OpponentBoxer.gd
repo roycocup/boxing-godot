@@ -13,7 +13,6 @@ func _ready():
 func _physics_process(delta):
 	if (cur_status == status.IDLE):
 		movement()
-		shots()
 		animate()
 
 
@@ -30,7 +29,16 @@ func movement():
 	pass
 	
 func animate():
-	pass
+	match cur_status:
+		status.HIT:
+			$Player.play("Hit")
+		status.LEFT:
+			$Player.play("Left")
+		status.RIGHT:
+			$Player.play("Right")
+		status.IDLE:
+			if not $Player.is_playing():
+				$Player.play("Idle")
 		
 func change_status(finished_animation):
 	if (cur_status != status.IDLE):
