@@ -7,7 +7,10 @@ path="res://.import/BoxerAtlas.png-bad78f73da10fc5e6f1b43c0913da848.stex"
 [deps]
 
 source_file="res://images/BoxerAtlas.png"
+source_md5="148c35d52474a265f1ffadfde7e4337a"
+
 dest_files=[ "res://.import/BoxerAtlas.png-bad78f73da10fc5e6f1b43c0913da848.stex" ]
+dest_md5="86f62fe70823dfdcbe95856a35ee5a95"
 
 [params]
 
