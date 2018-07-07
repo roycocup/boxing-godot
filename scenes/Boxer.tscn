@@ -35,9 +35,9 @@ velocity = 100
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 2 )
-offset = Vector2( 32, 0 )
+offset = Vector2( 31, 0 )
 hframes = 20
-frame = 19
+frame = 16
 _sections_unfolded = [ "Animation", "Offset" ]
 
 [node name="Player" type="AnimationPlayer" parent="." index="1"]
@@ -71,6 +71,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
 
+position = Vector2( 58.132, 2.38419e-07 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
@@ -88,20 +89,17 @@ collision_mask = 6
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftHand" index="0"]
 
-position = Vector2( 16.5173, 0 )
+position = Vector2( 61.2331, -1.0491 )
 shape = SubResource( 2 )
 disabled = true
 _sections_unfolded = [ "Material", "Visibility" ]
 
 [node name="RightHand" type="Area2D" parent="." index="4"]
 
-position = Vector2( 39.3125, 18.4375 )
+position = Vector2( 3.1875, 17.625 )
 scale = Vector2( 0.251953, 0.193359 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -113,13 +111,12 @@ collision_mask = 6
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightHand" index="0"]
 
+position = Vector2( 52.0025, -1.16829 )
 shape = SubResource( 3 )
+disabled = true
 
 [connection signal="area_shape_entered" from="Hitbox" to="." method="_on_Hitbox_area_shape_entered"]
 

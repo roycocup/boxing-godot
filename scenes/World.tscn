@@ -1,20 +1,29 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/World.gd" type="Script" id=1]
-[ext_resource path="res://scenes/Boxer.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Canvas.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Boxer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Enemy.tscn" type="PackedScene" id=4]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 300.745 ],
+"_edit_vertical_guides_": [ 512.758 ]
+}
 
-[node name="Boxer" parent="." index="0" instance=ExtResource( 2 )]
+[node name="Canvas" parent="." index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 489.728, 249.469 )
+position = Vector2( 506.187, 301.092 )
+
+[node name="Boxer" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 435.182, 302.685 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="Enemy" parent="." index="1" instance=ExtResource( 3 )]
+[node name="Enemy" parent="." index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 614.955, 251.824 )
+position = Vector2( 573.713, 301.049 )
 
 
