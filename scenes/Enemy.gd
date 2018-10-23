@@ -5,7 +5,6 @@ func _physics_process(delta):
 		animate()
 	
 
-
 func _on_Hitbox_area_shape_entered(area_id, area, area_shape, self_shape):
 	var back = -1
 	if rotation > 0:
