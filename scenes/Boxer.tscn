@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/Boxer.gd" type="Script" id=1]
 [ext_resource path="res://images/boxersprite2.png" type="Texture" id=2]
@@ -7,12 +7,22 @@
 [ext_resource path="res://animations/Left.tres" type="Animation" id=5]
 [ext_resource path="res://animations/Right.tres" type="Animation" id=6]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 54.8133, 34.1327 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 33.4851 )
+
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 22.6848, 21.6085 )
 
-[node name="Boxer" type="KinematicBody2D" index="0"]
+[node name="Boxer" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -20,14 +30,19 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_vertical_guides_": [ -43.7498 ]
+}
 velocity = 100
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+position = Vector2( -3.59241, 0 )
 texture = ExtResource( 2 )
 offset = Vector2( 31, 0 )
 hframes = 20
-frame = 12
+frame = 16
+region_rect = Rect2( 5514, 7, 380, 233 )
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
 [node name="Player" type="AnimationPlayer" parent="." index="1"]
@@ -44,14 +59,62 @@ anims/Right = ExtResource( 6 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="Hitboxes" type="Node2D" parent="." index="2"]
+[node name="Hurtboxes" type="Node2D" parent="." index="2"]
 
 position = Vector2( -18.1818, 2.62237 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitboxes" index="0"]
+[node name="leftHand" type="CollisionShape2D" parent="Hurtboxes" index="0"]
+
+position = Vector2( -41.3129, -87.4373 )
+shape = SubResource( 3 )
+disabled = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="Hurtboxes" index="1"]
+
+position = Vector2( -37.6403, 87.3094 )
+scale = Vector2( 1.58518, 1.0018 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtboxes/Area2D" index="0"]
+
+position = Vector2( 0.0141344, -0.0223656 )
+shape = SubResource( 4 )
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Hurtboxes/Area2D/CollisionShape2D" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -9.0
+margin_top = -21.0
+margin_right = 31.0
+margin_bottom = 19.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 1, 1, 1 )
+
+[node name="Hitbox" type="Node2D" parent="." index="3"]
+
+position = Vector2( -18.1818, 2.62237 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
 
 position = Vector2( -5.41957, -0.349648 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 

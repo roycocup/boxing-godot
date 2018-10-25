@@ -10,9 +10,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 22.6848, 21.6085 )
+extents = Vector2( 30.9952, 25.7884 )
 
-[node name="Boxer" type="KinematicBody2D"]
+[node name="Boxer" type="KinematicBody2D" index="0"]
 
 rotation = 3.14159
 input_pickable = false
@@ -50,9 +50,30 @@ _sections_unfolded = [ "Playback Options" ]
 
 position = Vector2( -18.1818, 2.62237 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
+[node name="Area2D" type="Area2D" parent="Hitbox" index="0"]
 
-position = Vector2( -0.566549, -4.55558 )
+position = Vector2( -27.9187, -2.77004 )
+scale = Vector2( 1.24097, 0.941318 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox/Area2D" index="0"]
+
+position = Vector2( 1.60043, -1.6879 )
 shape = SubResource( 1 )
+
+[node name="Hurtboxes" type="Node2D" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( -9.02518, 83.9325 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtboxes" index="0"]
+
+[connection signal="area_shape_entered" from="Hitbox/Area2D" to="." method="_on_Area2D_area_shape_entered"]
 
 
