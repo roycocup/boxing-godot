@@ -74,6 +74,6 @@ position = Vector2( -9.02518, 83.9325 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtboxes" index="0"]
 
-[connection signal="area_shape_entered" from="Hitbox/Area2D" to="." method="_on_Area2D_area_shape_entered"]
+[connection signal="area_shape_entered" from="Hitbox/Area2D" to="." method="_on_face_hit"]
 
 
