@@ -16,7 +16,7 @@ func shots():
 		cur_status = status.HIT
 
 func movement():
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("ui_right"):		
 		move_and_slide(Vector2(velocity, 0), Vector2())
 	if Input.is_action_pressed("ui_left"):
 		move_and_slide(Vector2(-velocity, 0), Vector2())
@@ -30,6 +30,7 @@ func animate():
 		status.HIT:
 			$Player.play("Hit")
 		status.LEFT:
+			print(get_tree().get('World').ropes)
 			$Player.play("Left")
 		status.RIGHT:
 			$Player.play("Right")
