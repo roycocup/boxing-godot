@@ -30,7 +30,6 @@ func animate():
 		status.HIT:
 			$Player.play("Hit")
 		status.LEFT:
-			print(get_tree().get('World').ropes)
 			$Player.play("Left")
 		status.RIGHT:
 			$Player.play("Right")
@@ -49,3 +48,4 @@ func _on_face_hit(area_id, area, area_shape, self_shape):
 	cur_status = status.HIT
 	$Player.play("Hit")
 	cur_status = status.IDLE
+

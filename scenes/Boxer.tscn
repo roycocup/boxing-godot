@@ -22,7 +22,7 @@ extents = Vector2( 32, 33.4851 )
 custom_solver_bias = 0.0
 extents = Vector2( 22.6848, 21.6085 )
 
-[node name="Boxer" type="KinematicBody2D" index="0"]
+[node name="Boxer" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
