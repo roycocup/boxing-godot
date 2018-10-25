@@ -5,6 +5,8 @@ var pos
 enum status {IDLE, RIGHT, LEFT, HIT}
 var cur_status
 var hit = false
+var canvas = null
+
 
 func _ready():
 	pos = Vector2()
@@ -20,7 +22,7 @@ func _physics_process(delta):
 func shots():
 	pass
 
-func movement():
+func movement():	
 	pass
 		
 func animate():

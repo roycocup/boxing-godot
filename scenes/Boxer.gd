@@ -16,6 +16,7 @@ func shots():
 		cur_status = status.HIT
 
 func movement():
+	.movement() # calling super (parent)
 	if Input.is_action_pressed("ui_right"):		
 		move_and_slide(Vector2(velocity, 0), Vector2())
 	if Input.is_action_pressed("ui_left"):
