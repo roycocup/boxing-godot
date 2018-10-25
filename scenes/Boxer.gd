@@ -16,15 +16,14 @@ func shots():
 		cur_status = status.HIT
 
 func movement():
-	.movement() # calling super (parent)
-	if Input.is_action_pressed("ui_right"):		
+	if Input.is_action_pressed("ui_right"):
 		move_and_slide(Vector2(velocity, 0), Vector2())
 	if Input.is_action_pressed("ui_left"):
 		move_and_slide(Vector2(-velocity, 0), Vector2())
 	if Input.is_action_pressed("ui_up"):
 		move_and_slide(Vector2(0, -velocity), Vector2())
 	if Input.is_action_pressed("ui_down"):
-		move_and_slide(Vector2(0, velocity), Vector2())		
+		move_and_slide(Vector2(0, velocity), Vector2())
 		
 func animate():
 	match cur_status:

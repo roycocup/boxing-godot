@@ -22,7 +22,8 @@ func _physics_process(delta):
 func shots():
 	pass
 
-func movement():	
+
+func movement():
 	pass
 		
 func animate():
