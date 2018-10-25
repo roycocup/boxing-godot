@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/Boxer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Enemy.tscn" type="PackedScene" id=4]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -40,23 +40,23 @@ editor_draw_limits = true
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Editor", "Transform" ]
 
-[node name="elements" type="Node2D" parent="." index="1"]
+[node name="Elements" type="Node2D" parent="." index="1"]
 
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Canvas" parent="elements" index="0" instance=ExtResource( 2 )]
+[node name="Canvas" parent="Elements" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 506.187, 301.092 )
 
-[node name="Boxer" parent="elements" index="1" instance=ExtResource( 3 )]
+[node name="Boxer" parent="Elements" index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 435.182, 302.685 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="Enemy" parent="elements" index="2" instance=ExtResource( 4 )]
+[node name="Enemy" parent="Elements" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 573.713, 301.049 )
 
