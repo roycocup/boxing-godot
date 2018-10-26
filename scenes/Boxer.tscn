@@ -10,7 +10,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 31.728, 31.6886 )
+extents = Vector2( 32.005, 31.6886 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -46,7 +46,7 @@ position = Vector2( -3.59241, 0 )
 texture = ExtResource( 2 )
 offset = Vector2( 31, 0 )
 hframes = 20
-frame = 16
+frame = 2
 region_rect = Rect2( 5514, 7, 380, 233 )
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
@@ -66,12 +66,10 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="Hurtboxes" type="Node2D" parent="." index="2"]
 
-editor/display_folded = true
 position = Vector2( -18.1818, 2.62237 )
 
 [node name="left_hand" type="Area2D" parent="Hurtboxes" index="0"]
 
-editor/display_folded = true
 position = Vector2( -13.06, -85.0599 )
 scale = Vector2( 1.58518, 1.0018 )
 input_pickable = true
@@ -85,7 +83,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtboxes/left_hand" index="0"]
 
-position = Vector2( 0.354118, 0.289452 )
+position = Vector2( 0.832577, 0.88604 )
 shape = SubResource( 1 )
 disabled = true
 
@@ -96,9 +94,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -17.0
+margin_left = -9.0
 margin_top = -28.0
-margin_right = 26.0
+margin_right = 32.0
 margin_bottom = 28.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -110,7 +108,6 @@ color = Color( 1, 1, 1, 1 )
 
 [node name="right_hand" type="Area2D" parent="Hurtboxes" index="1"]
 
-editor/display_folded = true
 position = Vector2( -37.6403, 86.7107 )
 scale = Vector2( 1.58518, 1.0018 )
 input_pickable = true
@@ -152,7 +149,17 @@ color = Color( 1, 1, 1, 1 )
 editor/display_folded = true
 position = Vector2( -18.1818, 2.62237 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
+[node name="Area2D" type="Area2D" parent="Hitbox" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox/Area2D" index="0"]
 
 position = Vector2( -20.388, -0.349648 )
 shape = SubResource( 3 )
