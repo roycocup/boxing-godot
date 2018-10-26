@@ -24,7 +24,7 @@ extents = Vector2( 32.2222, 31.8246 )
 custom_solver_bias = 0.0
 extents = Vector2( 32.1804, 33.2921 )
 
-[node name="Canvas" type="Node2D" index="0"]
+[node name="Canvas" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -47,6 +47,7 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ropes/left" index="0"]
 

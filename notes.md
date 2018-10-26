@@ -1,6 +1,7 @@
 # TODO
 
 ### Actors
+- Make hurtboxes smaller, like just the tip of the nose
 - Collisions and Hit
 - States
 - AI Opponent

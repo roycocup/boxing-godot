@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/Boxer.gd" type="Script" id=1]
 [ext_resource path="res://images/boxersprite2.png" type="Texture" id=2]
@@ -22,14 +22,19 @@ extents = Vector2( 32, 33.4851 )
 custom_solver_bias = 0.0
 extents = Vector2( 22.6848, 21.6085 )
 
-[node name="Boxer" type="KinematicBody2D"]
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 71.1523, 114.093 )
+
+[node name="Boxer" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
 __meta__ = {
 "_edit_vertical_guides_": [ -43.7498 ]
 }
@@ -141,6 +146,7 @@ color = Color( 1, 1, 1, 1 )
 
 [node name="Hitbox" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( -18.1818, 2.62237 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
@@ -148,5 +154,10 @@ position = Vector2( -18.1818, 2.62237 )
 position = Vector2( -5.41957, -0.349648 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="4"]
+
+position = Vector2( -55.9232, 0.998627 )
+shape = SubResource( 4 )
 
 
