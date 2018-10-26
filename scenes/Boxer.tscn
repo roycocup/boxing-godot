@@ -46,7 +46,7 @@ position = Vector2( -3.59241, 0 )
 texture = ExtResource( 2 )
 offset = Vector2( 31, 0 )
 hframes = 20
-frame = 2
+frame = 16
 region_rect = Rect2( 5514, 7, 380, 233 )
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
@@ -72,7 +72,7 @@ position = Vector2( -18.1818, 2.62237 )
 
 [node name="left_hand" type="Area2D" parent="Hurtboxes" index="0"]
 
-position = Vector2( -13.06, -85.0599 )
+position = Vector2( -41.3129, -87.4373 )
 scale = Vector2( 1.58518, 1.0018 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -85,7 +85,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtboxes/left_hand" index="0"]
 
-position = Vector2( 0.832577, 0.88604 )
+position = Vector2( 2.72114, 1.4837 )
 shape = SubResource( 1 )
 disabled = true
 
@@ -110,7 +110,7 @@ color = Color( 1, 1, 1, 1 )
 
 [node name="right_hand" type="Area2D" parent="Hurtboxes" index="1"]
 
-position = Vector2( -37.6403, 86.7107 )
+position = Vector2( -36.4428, 88.5068 )
 scale = Vector2( 1.58518, 1.0018 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -125,7 +125,6 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 0.0141344, -0.0223656 )
 shape = SubResource( 2 )
-disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="Hurtboxes/right_hand/CollisionShape2D" index="0"]
 

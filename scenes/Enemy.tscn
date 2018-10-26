@@ -17,7 +17,7 @@ extents = Vector2( 30.9952, 24.9468 )
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Boxer" type="KinematicBody2D" index="0"]
+[node name="Boxer" type="KinematicBody2D"]
 
 rotation = 3.14159
 input_pickable = false
@@ -53,8 +53,6 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="Hitbox" type="Node2D" parent="." index="2"]
 
-editor/display_folded = true
-visible = false
 position = Vector2( -18.1818, 2.62237 )
 
 [node name="Area2D" type="Area2D" parent="Hitbox" index="0"]
