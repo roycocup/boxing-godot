@@ -38,7 +38,7 @@ _sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
 __meta__ = {
 "_edit_vertical_guides_": [ -43.7498 ]
 }
-velocity = 100
+velocity = 200
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -66,6 +66,8 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="Hurtboxes" type="Node2D" parent="." index="2"]
 
+editor/display_folded = true
+visible = false
 position = Vector2( -18.1818, 2.62237 )
 
 [node name="left_hand" type="Area2D" parent="Hurtboxes" index="0"]
@@ -147,6 +149,7 @@ color = Color( 1, 1, 1, 1 )
 [node name="Hitbox" type="Node2D" parent="." index="3"]
 
 editor/display_folded = true
+visible = false
 position = Vector2( -18.1818, 2.62237 )
 
 [node name="Area2D" type="Area2D" parent="Hitbox" index="0"]

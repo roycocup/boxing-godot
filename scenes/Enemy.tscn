@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://images/boxersprite2.png" type="Texture" id=2]
@@ -12,16 +12,21 @@
 custom_solver_bias = 0.0
 extents = Vector2( 30.9952, 24.9468 )
 
-[node name="Boxer" type="KinematicBody2D"]
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Boxer" type="KinematicBody2D" index="0"]
 
 rotation = 3.14159
 input_pickable = false
-collision_layer = 4
-collision_mask = 2
+collision_layer = 1
+collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
-velocity = 1
+velocity = 200
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -48,6 +53,8 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="Hitbox" type="Node2D" parent="." index="2"]
 
+editor/display_folded = true
+visible = false
 position = Vector2( -18.1818, 2.62237 )
 
 [node name="Area2D" type="Area2D" parent="Hitbox" index="0"]
@@ -69,10 +76,15 @@ shape = SubResource( 1 )
 
 [node name="Hurtboxes" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
+visible = false
 position = Vector2( -9.02518, 83.9325 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtboxes" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="4"]
+
+visible = false
+position = Vector2( -47.0526, -3.42507 )
+scale = Vector2( 7.02471, 11.7799 )
+shape = SubResource( 2 )
 
 [connection signal="area_shape_entered" from="Hitbox/Area2D" to="." method="_on_face_hit"]
 

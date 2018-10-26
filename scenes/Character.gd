@@ -22,9 +22,11 @@ func _physics_process(delta):
 func shots():
 	pass
 
-
 func movement():
 	pass
+
+func move_back(amount):
+	move_and_slide(Vector2(amount,0))
 		
 func animate():
 	match cur_status:
