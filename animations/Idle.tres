@@ -64,7 +64,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -37.6082, 87.3766 ) ]
+"values": [ Vector2( -13.06, -85.0599 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Hurtboxes/left_hand:rotation_degrees")
@@ -89,5 +89,29 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1.58518, 1.0018 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Hurtboxes/right_hand:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -37.6403, 86.7107 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Hurtboxes/right_hand/CollisionShape2D:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 

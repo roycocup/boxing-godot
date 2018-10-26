@@ -38,14 +38,7 @@ editor_draw_limits = true
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Editor", "Transform" ]
 
-[node name="Elements" type="Node2D" parent="." index="1"]
-
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Canvas" parent="Elements" index="0" instance=ExtResource( 2 )]
+[node name="Canvas" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 506.187, 301.092 )
 
