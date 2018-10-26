@@ -1,8 +1,6 @@
 # TODO
 
-
 ### Actors
-- Boxer idle animation
 - Collisions and Hit
 - States
 - AI Opponent
@@ -22,5 +20,4 @@
 - Timer
 - Hitpoints
 - Rounds
-	
 
