@@ -20,14 +20,14 @@ extents = Vector2( 32, 33.4851 )
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 23.4573, 27.7668 )
+extents = Vector2( 26.3675, 33.7837 )
 
 [sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 67.554, 114.093 )
 
-[node name="Boxer" type="KinematicBody2D"]
+[node name="Boxer" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -147,12 +147,12 @@ color = Color( 1, 1, 1, 1 )
 
 [node name="Hitbox" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
-visible = false
 position = Vector2( -18.1818, 2.62237 )
 
 [node name="Area2D" type="Area2D" parent="Hitbox" index="0"]
 
+position = Vector2( -28.0811, -0.179859 )
+scale = Vector2( 1, 0.343755 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -163,7 +163,7 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox/Area2D" index="0"]
 
-position = Vector2( -20.388, -0.349648 )
+position = Vector2( 5.34027, 0.717016 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
@@ -172,5 +172,7 @@ _sections_unfolded = [ "Transform" ]
 visible = false
 position = Vector2( -55.9232, 0.998627 )
 shape = SubResource( 4 )
+
+[connection signal="area_shape_entered" from="Hitbox/Area2D" to="." method="_on_face_hit"]
 
 
