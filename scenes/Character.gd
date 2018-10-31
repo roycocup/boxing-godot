@@ -8,7 +8,19 @@ var hit = false
 var canvas = null
 
 
+func get_random_num():
+	randomize()
+	return randf()
+
+func randomize_character_colour():
+	var r = get_random_num()
+	var g = get_random_num()
+	var b = get_random_num()
+	var c = Color(r,g,b)
+	$Sprite.self_modulate = c
+
 func _ready():
+	randomize_character_colour()
 	pos = Vector2()
 	cur_status = status.IDLE
 	$Player.connect("animation_finished", self, "change_status")

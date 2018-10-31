@@ -132,17 +132,17 @@ tracks/0/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 30.9952, 24.9468 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32.4073, 30.5645 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Boxer" type="KinematicBody2D"]
+[node name="Enemy" type="KinematicBody2D" index="0"]
 
 rotation = 3.14159
 input_pickable = false
@@ -155,12 +155,14 @@ velocity = 200
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+self_modulate = Color( 0.742188, 0, 0, 1 )
+light_mask = 1024
 texture = ExtResource( 2 )
 offset = Vector2( 31, 0 )
 flip_v = true
 hframes = 20
 frame = 15
-_sections_unfolded = [ "Animation", "Offset", "Region" ]
+_sections_unfolded = [ "Visibility" ]
 
 [node name="Player" type="AnimationPlayer" parent="." index="1"]
 
@@ -200,6 +202,7 @@ shape = SubResource( 5 )
 
 [node name="Hurtboxes" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( -9.02518, 83.9325 )
 
 [node name="left_hand" type="Area2D" parent="Hurtboxes" index="0"]
@@ -217,14 +220,14 @@ audio_bus_name = "Master"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtboxes/left_hand" index="0"]
 
 visible = false
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="4"]
 
 visible = false
 position = Vector2( -47.0526, -3.42507 )
 scale = Vector2( 7.02471, 11.7799 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [connection signal="area_shape_entered" from="Hitbox/Area2D" to="." method="_on_face_hit"]
 
