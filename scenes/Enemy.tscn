@@ -150,18 +150,17 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Material", "Transform", "Visibility", "collision" ]
 velocity = 200
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-self_modulate = Color( 0.742188, 0, 0, 1 )
 light_mask = 1024
 texture = ExtResource( 2 )
 offset = Vector2( 31, 0 )
 flip_v = true
 hframes = 20
-frame = 15
+frame = 2
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Player" type="AnimationPlayer" parent="." index="1"]
@@ -180,12 +179,11 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="Hitbox" type="Node2D" parent="." index="2"]
 
-editor/display_folded = true
 position = Vector2( -18.1818, 2.62237 )
 
 [node name="Area2D" type="Area2D" parent="Hitbox" index="0"]
 
-position = Vector2( -27.9187, -4.15625 )
+position = Vector2( -27.9187, -5.4595 )
 scale = Vector2( 1.24097, 0.565692 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -197,6 +195,7 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox/Area2D" index="0"]
 
+visible = false
 position = Vector2( 1.60043, -1.6879 )
 shape = SubResource( 5 )
 
@@ -221,6 +220,7 @@ audio_bus_name = "Master"
 
 visible = false
 shape = SubResource( 6 )
+disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="4"]
 
