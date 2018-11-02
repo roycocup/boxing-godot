@@ -6,7 +6,7 @@ enum status {IDLE, RIGHT, LEFT, HIT}
 var cur_status
 var hit = false
 var canvas = null
-onready var FSM = preload("res://scenes/FSM.gd").new()
+onready var FSM = preload("res://scripts/FSM.gd").new()
 
 
 func get_random_num():

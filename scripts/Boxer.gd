@@ -1,4 +1,4 @@
-extends "res://scenes/Character.gd"
+extends "res://scripts/Character.gd"
 
 
 func _ready():
