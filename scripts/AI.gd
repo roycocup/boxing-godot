@@ -7,15 +7,16 @@ var data = {}
 
 func init_cache():
 	Cache.cache_filename = 'res://scripts/AI.cache'
-	Cache.save_data(data)
-	Cache.hidrate()
+	# Cache.save_data(data)
+	# Cache.hidrate()
 
 func _ready():
-	Yml.yml_filename = 'res://scripts/AiDecisionTree.yml'
-	var t = Yml.read()
-	print(t)
+	init_cache()
+	read_decision_tree()
 
 func read_decision_tree():
-	pass
+	Yml.yml_filename = 'res://scripts/AiDecisionTree.yml'
+	data = Yml.read()
+	
 
 
