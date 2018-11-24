@@ -1,0 +1,20 @@
+Game:
+  running:
+    winning:
+      chase:
+        - align closest side hand to head
+        - wait time depends on game level * random
+        - punch with that hand
+    losing: 
+      evade:
+        - align center with heads
+        - back up
+        - if against back rope:
+          - if dead center: 
+            - move right:
+              - if rope obstruct: 
+                - move left
+          - move left:
+            - align closest hand
+            - punch
+  over
