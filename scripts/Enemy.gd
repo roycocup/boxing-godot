@@ -8,7 +8,7 @@ func _physics_process(delta):
 	if (cur_status == status.IDLE):
 		animate()
 	if (frame % 30 == 1):
-		print(AI)
+		AI._ready()
 		left_punch()
 
 func frame_count():
