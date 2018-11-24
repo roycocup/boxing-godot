@@ -13,6 +13,7 @@ func init_cache():
 func _ready():
 	init_cache()
 	read_decision_tree()
+	print(data)
 
 func read_decision_tree():
 	Yml.yml_filename = 'res://scripts/AiDecisionTree.yml'

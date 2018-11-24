@@ -3,12 +3,15 @@ extends "res://scripts/Character.gd"
 var frame = 0
 onready var AI = preload("res://scripts/AI.gd").new()
 
+func _ready():
+	AI._ready()
+
+
 func _physics_process(delta):
 	frame_count()
 	if (cur_status == status.IDLE):
 		animate()
 	if (frame % 30 == 1):
-		AI._ready()
 		left_punch()
 
 func frame_count():

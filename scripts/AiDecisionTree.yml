@@ -1,13 +1,15 @@
-Game:
-  running:
-    winning:
+game:
+  if:
+
+    - winning:
       chase:
-        - 'align closest side hand to head'
-        - 'wait time depends on game level * random'
-        - 'punch with that hand'
-    losing: 
+        - set_var: {'position': 'closest hand to enemy head (not center)'}
+        - move: {'align-hand': 'align closest side hand to head'}
+        - wait: {'wait time depends on game level * random'}
+        - punch: {'punch with that hand'}
+    - losing: 
       evade:
-        - 'align center with heads'
+        - move: {move:'align center with heads'}
         - 'back up'
         - 'if against back rope':
           - 'if dead center': 
@@ -17,4 +19,3 @@ Game:
           - 'move left':
             - 'align closest hand'
             - 'punch'
-  over
