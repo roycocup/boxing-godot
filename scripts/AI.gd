@@ -1,6 +1,7 @@
 extends Node
 
 onready var Cache = preload("res://scripts/Cache.gd").new()
+onready var yaml = preload("res://addons/godot-yaml/gdyaml.gdns").new()
 
 var data = {
 	    player_level = 42,

@@ -2,3 +2,4 @@
 *import
 .import/*
 exports/*
+scripts/*.cache
