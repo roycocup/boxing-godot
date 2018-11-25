@@ -12,7 +12,6 @@ func init_cache():
 func _ready():
 	init_cache()
 	build_tree()
-	print(data)
 
 func build_tree():
 	data = { 
