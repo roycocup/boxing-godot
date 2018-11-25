@@ -25,7 +25,7 @@ func left_punch():
 func right_punch():
 	$Player.play("Right")
 	
-
 func _on_face_hit(area_id, area, area_shape, self_shape):
 	.move_back(2500)
 	$Player.play("Hit")
+	world.update_score(2)

@@ -72,5 +72,6 @@ func _on_face_hit(area_id, area, area_shape, self_shape):
 	cur_status = status.HIT
 	$Player.play("Hit")
 	cur_status = status.IDLE
+	world.update_score(1)
 
 
