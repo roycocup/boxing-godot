@@ -12,11 +12,11 @@ func _process(delta):
 		get_tree().quit()
 		
 
-func update_score(player_num):
+func update_score(player_data):
 	# Player 1 just been hit so add a point to player 2
-	if player_num == 1:
+	if player_data['name'] == 'p1':
 		Score['p2'] = Score['p2'] + 1
-	if player_num == 2:
+	if player_data['name'] == 'p2':
 		Score['p1'] = Score['p1'] + 1
 	else:
 		return 

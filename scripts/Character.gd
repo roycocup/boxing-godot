@@ -8,6 +8,7 @@ var hit = false
 var canvas = null
 onready var FSM = preload("res://scripts/FSM.gd").new()
 onready var world = get_tree().get_root().get_node("World")
+var player_data = {}
 
 
 func get_random_num():

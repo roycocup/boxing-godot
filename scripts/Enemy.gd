@@ -3,9 +3,10 @@ extends "res://scripts/Character.gd"
 var frame = 0
 onready var AI = preload("res://scripts/AI.gd").new()
 
-func _ready():
-	AI._ready()
 
+func _ready():
+	player_data['name'] = 'p2'
+	AI._ready(player_data)
 
 func _physics_process(delta):
 	frame_count()
@@ -28,4 +29,4 @@ func right_punch():
 func _on_face_hit(area_id, area, area_shape, self_shape):
 	.move_back(2500)
 	$Player.play("Hit")
-	world.update_score(2)
+	world.update_score(player_data)
