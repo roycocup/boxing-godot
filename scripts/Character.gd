@@ -9,7 +9,7 @@ var canvas = null
 onready var FSM = preload("res://scripts/FSM.gd").new()
 onready var world = get_tree().get_root().get_node("World")
 var player_data = {}
-
+var frame = 0
 
 func get_random_num():
 	randomize()
@@ -62,3 +62,7 @@ func change_status(finished_animation):
 func reset_status():
 	cur_status = status.IDLE
 
+func frame_count():
+	frame = frame + 1
+	if (frame >= 60):
+		frame = 0

@@ -1,6 +1,5 @@
 extends "res://scripts/Character.gd"
 
-var frame = 0
 onready var AI = preload("res://scripts/AI.gd").new()
 
 
@@ -14,11 +13,6 @@ func _physics_process(delta):
 		animate()
 	if (frame % 30 == 1):
 		left_punch()
-
-func frame_count():
-	frame = frame + 1
-	if (frame >= 60):
-		frame = 0
 
 func left_punch():
 	$Player.play("Left")
