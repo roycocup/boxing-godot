@@ -2,34 +2,8 @@ extends "res://scripts/Character.gd"
 
 
 func _ready():
-	player_data['name'] = 'p2'
+	player_data['name'] = 'p1'
 	._ready() # calling parent setup
-	init_states()
-	
-
-func init_states():
-	FSM.add_state(
-		FSM.states.IDLE, [
-			{"event":FSM.events.LEFT, "to_state":FSM.states.LEFT}, 
-			{"event":FSM.events.RIGHT, "to_state":FSM.states.RIGHT}, 
-		])
-	FSM.add_state(
-		FSM.states.LEFT, [
-			{"event":FSM.events.LEFT, "to_state":FSM.states.LEFT}, 
-			{"event":FSM.events.RIGHT, "to_state":FSM.states.IDLE}, 
-		])
-	FSM.add_state(
-		FSM.states.RIGHT, [
-			{"event":FSM.events.LEFT, "to_state":FSM.states.IDLE}, 
-			{"event":FSM.events.RIGHT, "to_state":FSM.states.RIGHT}, 
-		])
-	FSM.add_state(
-		FSM.states.HIT, [
-			{"event":FSM.events.LEFT, "to_state":FSM.states.RIGHT}, 
-			{"event":FSM.events.RIGHT, "to_state":FSM.states.RIGHT}, 
-		])
-	
-	FSM.current_state = FSM.states.IDLE
 
 func _physics_process(delta):
 	if (cur_status == status.IDLE):

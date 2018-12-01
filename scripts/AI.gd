@@ -19,7 +19,6 @@ func get_relative_status():
 	return 'winning'
 
 func _ready(player_data):
-	print(player_data)
 	init_cache()
 	build_tree()
 	Cache.save_data(data)
