@@ -21,7 +21,7 @@ func get_relative_status():
 func _ready(player_data):
 	init_cache()
 	build_tree()
-	Cache.save_data(data)
+	Cache.save(data)
 
 func _process():
 	# if started, chase. if winning, chase. if losing, evade.

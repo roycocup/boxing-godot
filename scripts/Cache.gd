@@ -15,7 +15,7 @@ func hidrate():
 	
 	return parse_json(file.get_line())
 	
-func save_data(data):
+func save(data):
 	# Open a file
 	var file = File.new()
 	if file.open(cache_filename, File.WRITE) != 0:
