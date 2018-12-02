@@ -2,8 +2,6 @@ extends KinematicBody2D
 
 export var velocity = 1
 var pos
-enum status {IDLE, RIGHT, LEFT, HIT}
-var cur_status
 var hit = false
 var canvas = null
 onready var FSM = preload("res://scripts/FSM.gd").new()
@@ -25,7 +23,7 @@ func randomize_character_colour():
 func _ready():
 	randomize_character_colour()
 	pos = Vector2()
-	cur_status = status.IDLE
+	FSM.current_state = FSM.states.IDLE
 	$Player.connect("animation_finished", self, "change_status")
 	init_states()
 	
@@ -37,24 +35,21 @@ func init_states():
 		])
 	FSM.add_state(
 		FSM.states.LEFT, [
-			{"event":FSM.events.LEFT, "to_state":FSM.states.LEFT}, 
-			{"event":FSM.events.RIGHT, "to_state":FSM.states.IDLE}, 
+			{"event":FSM.events.IDLE, "to_state":FSM.states.IDLE}, 
 		])
 	FSM.add_state(
 		FSM.states.RIGHT, [
-			{"event":FSM.events.LEFT, "to_state":FSM.states.IDLE}, 
-			{"event":FSM.events.RIGHT, "to_state":FSM.states.RIGHT}, 
+			{"event":FSM.events.IDLE, "to_state":FSM.states.IDLE}, 
 		])
 	FSM.add_state(
 		FSM.states.HIT, [
-			{"event":FSM.events.LEFT, "to_state":FSM.states.RIGHT}, 
-			{"event":FSM.events.RIGHT, "to_state":FSM.states.RIGHT}, 
+			{"event":FSM.events.IDLE, "to_state":FSM.states.IDLE}, 
 		])
 	
 	FSM.current_state = FSM.states.IDLE
 
 func _physics_process(delta):
-	if (cur_status == status.IDLE):
+	if (FSM.current_state == FSM.states.IDLE):
 		movement()
 		shots()
 		animate()
@@ -69,23 +64,23 @@ func move_back(amount):
 	move_and_slide(Vector2(amount,0))
 		
 func animate():
-	match cur_status:
-		status.HIT:
+	match FSM.current_state:
+		FSM.states.HIT:
 			$Player.play("Hit")
-		status.LEFT:
+		FSM.states.LEFT:
 			$Player.play("Left")
-		status.RIGHT:
+		FSM.states.RIGHT:
 			$Player.play("Right")
-		status.IDLE:
+		FSM.states.IDLE:
 			if not $Player.is_playing():
 				$Player.play("Idle")
 		
 func change_status(finished_animation):
-	if (cur_status != status.IDLE):
+	if (FSM.current_state != FSM.states.IDLE):
 		reset_status()
 		
 func reset_status():
-	cur_status = status.IDLE
+	FSM.current_state = FSM.states.IDLE
 
 func frame_count():
 	frame = frame + 1

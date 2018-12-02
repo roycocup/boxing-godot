@@ -7,7 +7,6 @@
 [ext_resource path="res://animations/Left.tres" type="Animation" id=5]
 [ext_resource path="res://animations/Right.tres" type="Animation" id=6]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -47,7 +46,7 @@ position = Vector2( -3.59241, 0 )
 texture = ExtResource( 2 )
 offset = Vector2( 31, 0 )
 hframes = 20
-frame = 16
+frame = 19
 region_rect = Rect2( 5514, 7, 380, 233 )
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
@@ -67,13 +66,12 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="Hurtboxes" type="Node2D" parent="." index="2"]
 
-editor/display_folded = true
 visible = false
 position = Vector2( -18.1818, 2.62237 )
 
 [node name="left_hand" type="Area2D" parent="Hurtboxes" index="0"]
 
-position = Vector2( -41.3129, -87.4373 )
+position = Vector2( -13.06, -85.0599 )
 scale = Vector2( 1.58518, 1.0018 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -86,13 +84,12 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtboxes/left_hand" index="0"]
 
-position = Vector2( 2.72114, 1.4837 )
+position = Vector2( 0.832577, 0.88604 )
 shape = SubResource( 1 )
 disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="Hurtboxes/left_hand/CollisionShape2D" index="0"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -111,7 +108,7 @@ color = Color( 1, 1, 1, 1 )
 
 [node name="right_hand" type="Area2D" parent="Hurtboxes" index="1"]
 
-position = Vector2( -36.4428, 88.5068 )
+position = Vector2( 143.777, 88.5069 )
 scale = Vector2( 1.58518, 1.0018 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -129,7 +126,6 @@ shape = SubResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="Hurtboxes/right_hand/CollisionShape2D" index="0"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0

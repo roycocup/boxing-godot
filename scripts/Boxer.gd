@@ -6,18 +6,18 @@ func _ready():
 	._ready() # calling parent setup
 
 func _physics_process(delta):
-	if (cur_status == status.IDLE):
+	if (FSM.current_state == FSM.states.IDLE):
 		movement()
 		shots()
 		animate()
 	
 func shots():
 	if Input.is_action_just_pressed("fire_1"):
-		cur_status = status.LEFT
+		FSM.handle(FSM.events.LEFT)
 	if Input.is_action_just_pressed("fire_2"):
-		cur_status = status.RIGHT		
+		FSM.handle(FSM.events.RIGHT)
 	if Input.is_key_pressed(KEY_0):
-		cur_status = status.HIT
+		FSM.handle(FSM.events.HIT)
 
 func movement():
 	if Input.is_action_pressed("ui_right"):
@@ -30,23 +30,23 @@ func movement():
 		move_and_slide(Vector2(0, velocity), Vector2())
 		
 func animate():
-	match cur_status:
-		status.HIT:
+	match FSM.current_state:
+		FSM.states.HIT:
 			$Player.play("Hit")
-		status.LEFT:
+		FSM.states.LEFT:
 			$Player.play("Left")
-		status.RIGHT:
+		FSM.states.RIGHT:
 			$Player.play("Right")
-		status.IDLE:
+		FSM.states.IDLE:
 			if not $Player.is_playing():
 				$Player.play("Idle")
 		
 
 func _on_face_hit(area_id, area, area_shape, self_shape):
 	.move_back(-2500)
-	cur_status = status.HIT
+	FSM.current_state = FSM.states.HIT
 	$Player.play("Hit")
-	cur_status = status.IDLE
+	FSM.current_state = FSM.states.IDLE
 	world.update_score(player_data)
 
 

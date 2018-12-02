@@ -13,6 +13,8 @@ func add_state(state, allowed):
 	s.allowed = allowed
 	registered_states.append(s)
 
+# check the event we are passing is allowed in current_state
+# and if it is, set it as the new current state
 func handle(event):
 	var state = registered_states[current_state]
 	for link in state.allowed:

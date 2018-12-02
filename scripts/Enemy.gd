@@ -2,14 +2,13 @@ extends "res://scripts/Character.gd"
 
 onready var AI = preload("res://scripts/AI.gd").new()
 
-
 func _ready():
 	player_data['name'] = 'p2'
 	AI._ready(player_data)
 
 func _physics_process(delta):
 	frame_count()
-	if (cur_status == status.IDLE):
+	if (FSM.current_state == FSM.states.IDLE):
 		animate()
 	if (frame % 30 == 1):
 		left_punch()

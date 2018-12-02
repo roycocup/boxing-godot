@@ -25,11 +25,11 @@ func update_score(player_data):
 	# Player 1 just been hit so add a point to player 2
 	if player_data['name'] == 'p1':
 		Score['p2'] = Score['p2'] + 1
-	if player_data['name'] == 'p2':
+	elif player_data['name'] == 'p2':
 		Score['p1'] = Score['p1'] + 1
 	else:
-		print(player_data['name'])
-		return 
+		return
+	print(Score)
 	Score['is_dirty'] = true
 		
 	
