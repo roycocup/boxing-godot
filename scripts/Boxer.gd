@@ -1,6 +1,5 @@
 extends "res://scripts/Character.gd"
 
-
 func _ready():
 	player_data['name'] = 'p1'
 	._ready() # calling parent setup
@@ -43,10 +42,9 @@ func animate():
 		
 
 func _on_face_hit(area_id, area, area_shape, self_shape):
-	.move_back(-2500)
 	FSM.current_state = FSM.states.HIT
+	.move_back(-2500)
 	$Player.play("Hit")
-	FSM.current_state = FSM.states.IDLE
 	world.update_score(player_data)
 
 

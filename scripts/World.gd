@@ -31,6 +31,8 @@ func update_score(player_data):
 		return
 	print(Score)
 	Score['is_dirty'] = true
+
+
 		
 	
 
