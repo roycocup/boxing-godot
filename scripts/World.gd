@@ -1,8 +1,11 @@
 extends Node2D
 
+onready var Cache = preload("res://scripts/Cache.gd").new()
+
+onready var Players = {'p1':$Canvas/Boxer, 'p2':$Canvas/AI}
 var Score = {'p1':0, 'p2':0, 'is_dirty':false}
 var Time = 90 # seconds
-onready var Cache = preload("res://scripts/Cache.gd").new()
+
 
 func _ready():
 	set_process(true)
@@ -15,7 +18,7 @@ func _process(delta):
 func quit_by_esc():
 	if Input.is_action_pressed("exit"):
 		get_tree().quit()
-
+	
 func save_score():
 	if (Score['is_dirty']):
 		Cache.save(Score)

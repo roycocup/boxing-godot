@@ -32,6 +32,7 @@ texture = ExtResource( 1 )
 
 [node name="Ropes" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
 __meta__ = {
 "_edit_group_": true
 }
@@ -118,5 +119,6 @@ position = Vector2( -85.9183, 0 )
 [node name="AI" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 95, 0.000121554 )
+speed = 100
 
 

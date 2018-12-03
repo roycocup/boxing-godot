@@ -5,6 +5,8 @@ func _ready():
 	._ready() # calling parent setup
 
 func _physics_process(delta):
+	# only process these if we are idle
+	# if we are not idle, let the animations run and end
 	if (FSM.current_state == FSM.states.IDLE):
 		movement()
 		shots()
