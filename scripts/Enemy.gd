@@ -20,7 +20,6 @@ func shots():
 	var opponent_pos = world.Players['p1'].position
 	var dist = opponent_pos - position
 	var direction = dist.normalized()
-	print("x:",dist.x, " - y:",dist.y)
 	if (abs(dist.x) < 0):
 		if (dist.y < 0):
 			FSM.handle(FSM.events.LEFT)
