@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Canvas.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=3]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -13,6 +14,7 @@ __meta__ = {
 
 [node name="Camera2D" type="Camera2D" parent="." index="0"]
 
+visible = false
 position = Vector2( 512.544, 304.524 )
 anchor_mode = 1
 rotating = false
@@ -41,5 +43,13 @@ _sections_unfolded = [ "Editor", "Transform" ]
 [node name="Canvas" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 506.187, 301.092 )
+
+[node name="Container" parent="." index="2" instance=ExtResource( 3 )]
+
+margin_left = -10.0
+margin_top = -210.0
+margin_right = -10.0
+margin_bottom = -274.0
+_sections_unfolded = [ "Rect" ]
 
 

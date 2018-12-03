@@ -31,7 +31,7 @@ func movement():
 	if (is_winning()):
 		chase()
 	elif (!is_winning()):
-		if (score_diff() > 20 and score_diff() < 40):
+		if (score_diff() > 6):
 			chase()
 		else:
 			evade()
