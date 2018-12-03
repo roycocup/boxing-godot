@@ -86,4 +86,10 @@ func frame_count():
 	frame = frame + 1
 	if (frame >= 60):
 		frame = 0
+
+func random_option(options):
+	var num_options = count(options)
+	randomize()
+	var sel = (randi() % num_options) + 1
+	return options[sel]
 		

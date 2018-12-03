@@ -1,7 +1,6 @@
 extends Node2D
 
 onready var Cache = preload("res://scripts/Cache.gd").new()
-
 onready var Players = {'p1':$Canvas/Boxer, 'p2':$Canvas/AI}
 var Score = {'p1':0, 'p2':0, 'is_dirty':false}
 var Time = 90 # seconds

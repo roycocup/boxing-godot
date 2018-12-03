@@ -2,7 +2,6 @@ extends "res://scripts/Character.gd"
 
 onready var AI = preload("res://scripts/AI.gd").new()
 var pname = 'p2'
-export var speed = 100
 
 func _ready():
 	player_data['name'] = pname
@@ -20,19 +19,27 @@ func shots():
 	var opponent_pos = world.Players['p1'].position
 	var dist = opponent_pos - position
 	var direction = dist.normalized()
-	if (abs(dist.x) < 0):
+	if (abs(dist.x) < 120):
 		if (dist.y < 0):
 			FSM.handle(FSM.events.LEFT)
 		elif (dist.y > 1):
 			FSM.handle(FSM.events.RIGHT)
+		else:
+			.random_option(FSM.handle(FSM.events.LEFT), FSM.handle(FSM.events.RIGHT))
 
 func movement():
 	if (is_winning()):
 		chase()
 	elif (!is_winning()):
-		evade()
+		if (score_diff() > 20 and score_diff() < 40):
+			chase()
+		else:
+			evade()
 	else:
 		chase()
+	
+func score_diff():
+	return world.Score['p1'] - world.Score['p2']
 	
 func is_winning():
 	return world.Score['p1'] < world.Score['p2']
@@ -41,13 +48,13 @@ func chase():
 	var opponent_pos = world.Players['p1'].position
 	var dist = opponent_pos - position
 	var direction = dist.normalized()
-	move_and_slide(direction * speed, Vector2())
+	move_and_slide(direction * velocity, Vector2())
 
 func evade():
 	var opponent_pos = world.Players['p1'].position
 	var dist = opponent_pos - position
 	var direction = dist.normalized()
-	move_and_slide(-direction * speed, Vector2())
+	move_and_slide(-direction * velocity, Vector2())
 
 func left_punch():
 	$Player.play("Left")

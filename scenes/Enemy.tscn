@@ -148,7 +148,7 @@ extents = Vector2( 32.4073, 30.5645 )
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Enemy" type="KinematicBody2D" index="0"]
+[node name="Enemy" type="KinematicBody2D"]
 
 rotation = 3.14159
 input_pickable = false
@@ -158,7 +158,6 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Material", "Transform", "Visibility", "collision" ]
 velocity = 200
-speed = 100
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
