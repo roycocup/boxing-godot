@@ -65,4 +65,5 @@ func right_punch():
 func _on_face_hit(area_id, area, area_shape, self_shape):
 	.move_back(2500)
 	$Player.play("Hit")
+	$AudioPlayer.play()
 	world.update_score(player_data)

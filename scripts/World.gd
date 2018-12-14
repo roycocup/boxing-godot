@@ -5,10 +5,12 @@ onready var Players = {'p1':$Canvas/Boxer, 'p2':$Canvas/AI}
 var Score = {'p1':0, 'p2':0, 'is_dirty':false}
 var Time = 90 # seconds
 
-
 func _ready():
 	set_process(true)
 	Cache.cache_filename = 'res://scripts/World.cache'
+	$Bell.play()
+	$Music.play()
+	
 
 func _process(delta):
 	quit_by_esc()

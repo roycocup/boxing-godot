@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/Boxer.gd" type="Script" id=1]
 [ext_resource path="res://images/boxersprite2.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://animations/Idle.tres" type="Animation" id=4]
 [ext_resource path="res://animations/Left.tres" type="Animation" id=5]
 [ext_resource path="res://animations/Right.tres" type="Animation" id=6]
+[ext_resource path="res://audio/punch3.ogg" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -27,7 +28,7 @@ extents = Vector2( 26.3675, 33.7837 )
 custom_solver_bias = 0.0
 extents = Vector2( 67.554, 114.093 )
 
-[node name="Boxer" type="KinematicBody2D" index="0"]
+[node name="Boxer" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -145,6 +146,7 @@ color = Color( 1, 1, 1, 1 )
 
 [node name="Hitbox" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( -18.1818, 2.62237 )
 
 [node name="Area2D" type="Area2D" parent="Hitbox" index="0"]
@@ -170,6 +172,15 @@ _sections_unfolded = [ "Transform" ]
 visible = false
 position = Vector2( -55.9232, 0.998627 )
 shape = SubResource( 4 )
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 7 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="area_shape_entered" from="Hitbox/Area2D" to="." method="_on_face_hit"]
 
