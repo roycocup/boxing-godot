@@ -3,7 +3,7 @@ extends Node2D
 onready var Cache = preload("res://scripts/Cache.gd").new()
 onready var Players = {'p1':$Canvas/Boxer, 'p2':$Canvas/AI}
 var Score = {'p1':0, 'p2':0, 'is_dirty':false}
-var Time = 90 # seconds
+var Level = 1
 onready var UI = {
 	'p1_score':$UI/HBoxContainer/MarginContainer/p1_Score,
 	'p2_score':$UI/HBoxContainer/p2_Score,
@@ -15,7 +15,6 @@ func _ready():
 	Cache.cache_filename = 'res://scripts/World.cache'
 	#$Bell.play()
 	
-
 func _process(delta):
 	quit_by_esc()
 	save_score()
@@ -25,7 +24,19 @@ func quit_by_esc():
 	if Input.is_action_pressed("exit"):
 		get_tree().quit()
 
+func get_time_left_str():
+	var secs = round($Timer.time_left)
+	var minutes = round(secs/60)
+	if (minutes <= 0): 
+		minutes = 0
+	secs = str(secs - (minutes * 60))
+	if len(secs) < 2:
+		secs = "0" + secs
+	var time = str(minutes) + ":" + str(secs)
+	return str(time)
+
 func update_ui():
+	UI['time'].text = get_time_left_str()
 	UI['p1_score'].text = str(Score['p1'])
 	UI['p2_score'].text = str(Score['p2'])
 	

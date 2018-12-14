@@ -21,7 +21,7 @@ func randomize_character_colour():
 	$Sprite.self_modulate = c
 
 func _ready():
-	randomize_character_colour()
+	#randomize_character_colour()
 	pos = Vector2()
 	FSM.current_state = FSM.states.IDLE
 	$Player.connect("animation_finished", self, "change_status")
