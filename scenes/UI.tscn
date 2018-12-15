@@ -10,8 +10,9 @@ use_filter = false
 font_data = ExtResource( 1 )
 _sections_unfolded = [ "Font" ]
 
-[node name="Container" type="Container" index="0"]
+[node name="Container" type="Container"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -26,6 +27,7 @@ size_flags_vertical = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
