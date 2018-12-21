@@ -2,6 +2,10 @@ extends Node2D
 
 var Score = {'p1':0, 'p2':0, 'is_dirty':false}
 var Level = 1
+const RUNNING = 0
+const GAME_OVER = 1
+const ROUND_START = 2
+var State = ROUND_START
 
 onready var Cache = preload("res://scripts/Cache.gd").new()
 onready var Players = {'p1':$Canvas/Boxer, 'p2':$Canvas/AI}
@@ -15,11 +19,17 @@ func _ready():
 	set_process(true)
 	Cache.cache_filename = 'res://scripts/World.cache'
 	#$Bell.play()
-	
+
+func update_state():
+	if $Timer.time_left <= 0:
+		State = GAME_OVER
+
 func _process(delta):
 	quit_by_esc()
-	if $Timer.time_left <= 0:
+	update_state()
+	if State == GAME_OVER:
 		$GameOverOverlay/AnimationPlayer.play('GameOver')
+		quit()
 	save_score()
 	update_ui()
 
