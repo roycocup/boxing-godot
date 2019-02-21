@@ -22,17 +22,22 @@ func _ready():
 
 func update_state():
 	if $Timer.time_left <= 0:
-		State = GAME_OVER
+		set_state(GAME_OVER) 
 
 func _process(delta):
 	quit_by_esc()
 	update_state()
-	if State == GAME_OVER:
+	if get_state() == GAME_OVER:
 		$GameOverOverlay/AnimationPlayer.play('GameOver')
-		quit()
-	save_score()
-	update_ui()
+	else:
+		save_score()
+		update_ui()
 
+func set_state(new_state):
+	State = new_state
+
+func get_state():
+	return State
 
 func quit():
 	get_tree().quit()
