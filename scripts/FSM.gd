@@ -17,8 +17,11 @@ func add_state(state, allowed):
 # and if it is, set it as the new current state
 func handle(event):
 	var state = registered_states[current_state]
+	# open the dictionary for the current state
 	for link in state.allowed:
+		# if the event matches the one being handled...
 		if link.event == event:
+			# set the current state to the other property (to_state)
 			current_state = link.to_state
 		
 	
