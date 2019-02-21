@@ -38,7 +38,7 @@ func get_state():
 
 func update_state():
 	if $Timer.time_left <= 0:
-		set_state(GAME_OVER) 
+		set_state(GAME_OVER)
 
 func quit():
 	get_tree().quit()

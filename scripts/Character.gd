@@ -36,6 +36,8 @@ func init_states():
 		FSM.states.HIT, [
 			{"event":FSM.events.IDLE, "to_state":FSM.states.IDLE}, 
 		])
+	FSM.add_state(
+		FSM.states.PAUSE, [])
 	
 	FSM.current_state = FSM.states.IDLE
 
@@ -65,6 +67,9 @@ func animate():
 		FSM.states.IDLE:
 			if not $Player.is_playing():
 				$Player.play("Idle")
+		FSM.states.PAUSE:
+			if not $Player.is_playing():
+				$Player.play("Idle")
 		
 func change_status(finished_animation):
 	if (FSM.current_state != FSM.states.IDLE):
@@ -83,4 +88,5 @@ func random_option(options):
 	randomize()
 	var sel = (randi() % num_options) + 1
 	return options[sel]
+
 		

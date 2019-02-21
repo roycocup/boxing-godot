@@ -11,6 +11,8 @@ func _physics_process(delta):
 		movement()
 		shots()
 		animate()
+	if (FSM.current_state == FSM.states.PAUSE):
+		animate()
 	
 func shots():
 	if Input.is_action_just_pressed("fire_1"):
@@ -30,19 +32,6 @@ func movement():
 	if Input.is_action_pressed("ui_down"):
 		move_and_slide(Vector2(0, velocity), Vector2())
 		
-func animate():
-	match FSM.current_state:
-		FSM.states.HIT:
-			$Player.play("Hit")
-		FSM.states.LEFT:
-			$Player.play("Left")
-		FSM.states.RIGHT:
-			$Player.play("Right")
-		FSM.states.IDLE:
-			if not $Player.is_playing():
-				$Player.play("Idle")
-		
-
 func _on_face_hit(area_id, area, area_shape, self_shape):
 	FSM.current_state = FSM.states.HIT
 	.move_back(-2500)

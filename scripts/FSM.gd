@@ -1,6 +1,6 @@
 extends Node
 
-enum states {IDLE, LEFT, RIGHT, HIT}
+enum states {IDLE, LEFT, RIGHT, HIT, PAUSE}
 enum events {LEFT, RIGHT, IDLE}
 
 var registered_states = []

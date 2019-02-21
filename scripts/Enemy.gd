@@ -14,6 +14,9 @@ func _process(delta):
 		animate()
 		movement()
 		shots()
+	if (FSM.current_state == FSM.states.PAUSE):
+		animate()
+		
 
 func shots():
 	var opponent_pos = world.Players['p1'].position
