@@ -1,7 +1,7 @@
 extends Node
 
 enum states {IDLE, LEFT, RIGHT, HIT, PAUSE}
-enum events {LEFT, RIGHT, IDLE}
+enum events {LEFT, RIGHT, IDLE, HIT}
 
 var registered_states = []
 var current_state = null

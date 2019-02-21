@@ -89,8 +89,8 @@ func random_option(options):
 	var sel = (randi() % num_options) + 1
 	return options[sel]
 
-func set_state(state):
-	FSM.handle(state)
+func set_state(event):
+	FSM.handle(event)
 
 func get_state():
 	return FSM.current_state

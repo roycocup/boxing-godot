@@ -7,6 +7,7 @@ const ROUND_START = 2
 var Level = 1
 var State = ROUND_START
 
+var fsm = load('res://scripts/FSM.gd').new()
 var helper = load('res://scripts/Helper.gd').new()
 var ui = load('res://scripts/UiManager.gd').new()
 var score = load('res://scripts/ScoreManager.gd').new()
@@ -25,7 +26,9 @@ func _process(delta):
 	quit_by_esc()
 	update_state()
 	if get_state() == GAME_OVER:
-		$GameOverOverlay/AnimationPlayer.play('GameOver')
+#		ui.show_game_over()
+		Players['p1'].set_state(fsm.states.PAUSE)
+		Players['p2'].set_state(fsm.states.PAUSE)
 	else:
 		score.save()
 		ui.update(UI, score.get_score_map(), $Timer)

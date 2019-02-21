@@ -6,3 +6,7 @@ func update(UI, score, timer):
 	UI['time'].text = helper.get_time_left_str(timer)
 	UI['p1_score'].text = str(score['p1'])
 	UI['p2_score'].text = str(score['p2'])
+
+func show_game_over_menu():
+	$GameOverOverlay/AnimationPlayer.play('GameOver')
+

@@ -15,6 +15,8 @@ func _physics_process(delta):
 		animate()
 	
 func shots():
+	if Input.is_key_pressed(KEY_S):
+		print(.get_state())
 	if Input.is_action_just_pressed("fire_1"):
 		.set_state(FSM.events.LEFT)
 	if Input.is_action_just_pressed("fire_2"):
@@ -33,7 +35,7 @@ func movement():
 		move_and_slide(Vector2(0, velocity), Vector2())
 		
 func _on_face_hit(area_id, area, area_shape, self_shape):
-	.set_state(FSM.states.HIT)
+	.set_state(FSM.events.HIT)
 	.kick_back(-2500)
 	$Player.play("Hit")
 	$AudioPlayer.play()
