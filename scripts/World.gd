@@ -28,7 +28,7 @@ func _process(delta):
 	if get_state() == GAME_OVER:
 		# ui.show_game_over()
 		Players['p1'].set_state(fsm.events.PAUSE)
-		# Players['p2'].set_state(fsm.events.PAUSE)
+		Players['p2'].set_state(fsm.events.PAUSE)
 	else:
 		score.save()
 		ui.update(UI, score.get_score_map(), $Timer)
