@@ -21,10 +21,6 @@ func _ready():
 	set_process(true)
 	#$Bell.play()
 
-func update_state():
-	if $Timer.time_left <= 0:
-		set_state(GAME_OVER) 
-
 func _process(delta):
 	quit_by_esc()
 	update_state()
@@ -39,6 +35,10 @@ func set_state(new_state):
 
 func get_state():
 	return State
+
+func update_state():
+	if $Timer.time_left <= 0:
+		set_state(GAME_OVER) 
 
 func quit():
 	get_tree().quit()
