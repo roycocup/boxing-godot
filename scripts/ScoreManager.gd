@@ -1,14 +1,14 @@
 extends Node2D
 
-onready var Cache = preload("res://scripts/Cache.gd").new()
+var Cache = preload("res://scripts/Cache.gd").new()
 var score_map = {'p1':0, 'p2':0, 'is_dirty':false}
 
-func _ready():
+func _init():
 	Cache.cache_filename = 'res://scripts/Score.cache'
 
 func save():
 	if (score_map['is_dirty']):
-		# Cache.save(score_map)
+		Cache.save(score_map)
 		score_map['is_dirty'] = false
 
 func update(player_data):

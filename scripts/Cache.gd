@@ -10,7 +10,7 @@ func hidrate():
 	
 	# Open existing file
 	if file.open(cache_filename, File.READ) != 0:
-	    print("Error opening file")
+	    print("Error opening file " + cache_filename)
 	    return
 	
 	return parse_json(file.get_line())
