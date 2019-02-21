@@ -39,10 +39,10 @@ func movement():
 		chase()
 	
 func score_diff():
-	return world.Score['p1'] - world.Score['p2']
+	return score['p1'] - score['p2']
 	
 func is_winning():
-	return world.Score['p1'] < world.Score['p2']
+	return score['p1'] < score['p2']
 	
 func chase():
 	var opponent_pos = world.Players['p1'].position
@@ -66,4 +66,4 @@ func _on_face_hit(area_id, area, area_shape, self_shape):
 	.move_back(2500)
 	$Player.play("Hit")
 	$AudioPlayer.play()
-	world.update_score(player_data)
+	ScoreMan.update(player_data)

@@ -6,6 +6,8 @@ var hit = false
 var canvas = null
 onready var FSM = preload("res://scripts/FSM.gd").new()
 onready var world = get_tree().get_root().get_node("World")
+onready var ScoreMan = world.score
+onready var score = world.score.get_score_map()
 var player_data = {}
 var frame = 0
 
