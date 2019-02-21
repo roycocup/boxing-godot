@@ -7,6 +7,7 @@ const GAME_OVER = 1
 const ROUND_START = 2
 var State = ROUND_START
 var helper = load('res://scripts/Helper.gd').new()
+var ui = load('res://scripts/UiManager.gd').new()
 
 onready var Cache = preload("res://scripts/Cache.gd").new()
 onready var Players = {'p1':$Canvas/Boxer, 'p2':$Canvas/AI}
@@ -32,7 +33,7 @@ func _process(delta):
 		$GameOverOverlay/AnimationPlayer.play('GameOver')
 	else:
 		save_score()
-		update_ui()
+		ui.update(UI, Score, $Timer)
 
 func set_state(new_state):
 	State = new_state
@@ -46,12 +47,6 @@ func quit():
 func quit_by_esc():
 	if Input.is_action_pressed("exit"):
 		quit()
-
-
-func update_ui():
-	UI['time'].text = helper.get_time_left_str($Timer)
-	UI['p1_score'].text = str(Score['p1'])
-	UI['p2_score'].text = str(Score['p2'])
 	
 func save_score():
 	if (Score['is_dirty']):
