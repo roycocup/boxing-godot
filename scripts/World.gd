@@ -6,6 +6,7 @@ const RUNNING = 0
 const GAME_OVER = 1
 const ROUND_START = 2
 var State = ROUND_START
+var helper = load('res://scripts/Helper.gd').new()
 
 onready var Cache = preload("res://scripts/Cache.gd").new()
 onready var Players = {'p1':$Canvas/Boxer, 'p2':$Canvas/AI}
@@ -45,22 +46,10 @@ func quit():
 func quit_by_esc():
 	if Input.is_action_pressed("exit"):
 		quit()
-		
 
-func get_time_left_str():
-	var secs = fmod(round($Timer.time_left), 60)
-	var minutes = floor($Timer.time_left/60)
-	if (minutes <= 0):
-		minutes = 0
-	secs = str(secs)
-	minutes = str(minutes)
-	if len(secs) < 2:
-		secs = "0" + secs
-	var time = str(minutes) + ":" + str(secs)
-	return str(time)
 
 func update_ui():
-	UI['time'].text = get_time_left_str()
+	UI['time'].text = helper.get_time_left_str($Timer)
 	UI['p1_score'].text = str(Score['p1'])
 	UI['p2_score'].text = str(Score['p2'])
 	
