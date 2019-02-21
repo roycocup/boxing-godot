@@ -7,20 +7,20 @@ func _ready():
 func _physics_process(delta):
 	# only process these if we are idle
 	# if we are not idle, let the animations run and end
-	if (FSM.current_state == FSM.states.IDLE):
+	if (.get_state() == FSM.states.IDLE):
 		movement()
 		shots()
 		animate()
-	if (FSM.current_state == FSM.states.PAUSE):
+	if (.get_state() == FSM.states.PAUSE):
 		animate()
 	
 func shots():
 	if Input.is_action_just_pressed("fire_1"):
-		FSM.handle(FSM.events.LEFT)
+		.set_state(FSM.events.LEFT)
 	if Input.is_action_just_pressed("fire_2"):
-		FSM.handle(FSM.events.RIGHT)
+		.set_state(FSM.events.RIGHT)
 	if Input.is_key_pressed(KEY_0):
-		FSM.handle(FSM.events.HIT)
+		.set_state(FSM.events.HIT)
 
 func movement():
 	if Input.is_action_pressed("ui_right"):
@@ -33,8 +33,8 @@ func movement():
 		move_and_slide(Vector2(0, velocity), Vector2())
 		
 func _on_face_hit(area_id, area, area_shape, self_shape):
-	FSM.current_state = FSM.states.HIT
-	.move_back(-2500)
+	.set_state(FSM.states.HIT)
+	.kick_back(-2500)
 	$Player.play("Hit")
 	$AudioPlayer.play()
 	ScoreMan.update(player_data)

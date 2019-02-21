@@ -24,11 +24,11 @@ func shots():
 	var direction = dist.normalized()
 	if (abs(dist.x) < 120):
 		if (dist.y < 0):
-			FSM.handle(FSM.events.LEFT)
+			.set_state(FSM.events.LEFT)
 		elif (dist.y > 1):
-			FSM.handle(FSM.events.RIGHT)
+			.set_state(FSM.events.RIGHT)
 		else:
-			.random_option(FSM.handle(FSM.events.LEFT), FSM.handle(FSM.events.RIGHT))
+			.random_option(.set_state(FSM.events.LEFT), .set_state(FSM.events.RIGHT))
 
 func movement():
 	if (is_winning()):
@@ -66,7 +66,7 @@ func right_punch():
 	$Player.play("Right")
 	
 func _on_face_hit(area_id, area, area_shape, self_shape):
-	.move_back(2500)
+	.kick_back(2500)
 	$Player.play("Hit")
 	$AudioPlayer.play()
 	ScoreMan.update(player_data)

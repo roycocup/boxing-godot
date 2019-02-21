@@ -53,7 +53,7 @@ func shots():
 func movement():
 	pass
 
-func move_back(amount):
+func kick_back(amount):
 	move_and_slide(Vector2(amount,0))
 		
 func animate():
@@ -89,4 +89,8 @@ func random_option(options):
 	var sel = (randi() % num_options) + 1
 	return options[sel]
 
-		
+func set_state(state):
+	FSM.handle(state)
+
+func get_state():
+	return FSM.current_state
