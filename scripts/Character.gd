@@ -21,23 +21,29 @@ func _ready():
 func init_states():
 	FSM.add_state(
 		FSM.states.IDLE, [
+			{"event":FSM.events.PAUSE, "to_state":FSM.states.PAUSE},
 			{"event":FSM.events.LEFT, "to_state":FSM.states.LEFT}, 
 			{"event":FSM.events.RIGHT, "to_state":FSM.states.RIGHT}, 
 		])
 	FSM.add_state(
 		FSM.states.LEFT, [
+			{"event":FSM.events.PAUSE, "to_state":FSM.states.PAUSE},
 			{"event":FSM.events.IDLE, "to_state":FSM.states.IDLE}, 
 		])
 	FSM.add_state(
 		FSM.states.RIGHT, [
+			{"event":FSM.events.PAUSE, "to_state":FSM.states.PAUSE},
 			{"event":FSM.events.IDLE, "to_state":FSM.states.IDLE}, 
 		])
 	FSM.add_state(
 		FSM.states.HIT, [
+			{"event":FSM.events.PAUSE, "to_state":FSM.states.PAUSE},
 			{"event":FSM.events.IDLE, "to_state":FSM.states.IDLE}, 
 		])
 	FSM.add_state(
-		FSM.states.PAUSE, [])
+		FSM.states.PAUSE, [
+			{"event":FSM.events.IDLE, "to_state":FSM.states.IDLE},
+		])
 	
 	FSM.current_state = FSM.states.IDLE
 

@@ -1,7 +1,7 @@
 extends Node
 
 enum states {IDLE, LEFT, RIGHT, HIT, PAUSE}
-enum events {LEFT, RIGHT, IDLE, HIT}
+enum events {LEFT, RIGHT, IDLE, HIT, PAUSE}
 
 var registered_states = []
 var current_state = null
@@ -19,7 +19,7 @@ func handle(event):
 	var state = registered_states[current_state]
 	for link in state.allowed:
 		if link.event == event:
-			current_state = state.allowed[event].to_state
+			current_state = link.to_state
 		
 	
 class State:
