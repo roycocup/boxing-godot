@@ -11,19 +11,8 @@ onready var score = world.score.get_score_map()
 var player_data = {}
 var frame = 0
 
-func get_random_num():
-	randomize()
-	return randf()
-
-func randomize_character_colour():
-	var r = get_random_num()
-	var g = get_random_num()
-	var b = get_random_num()
-	var c = Color(r,g,b)
-	$Sprite.self_modulate = c
 
 func _ready():
-	#randomize_character_colour()
 	pos = Vector2()
 	FSM.current_state = FSM.states.IDLE
 	$Player.connect("animation_finished", self, "change_status")
