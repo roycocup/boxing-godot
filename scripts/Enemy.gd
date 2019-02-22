@@ -7,7 +7,7 @@ func _ready():
 	player_data['name'] = pname
 	AI._ready(player_data)
 
-func _process(delta):
+func _physics_process(delta):
 	frame_count()
 	# only move or throw punches if you are idle and not doing any other thing
 	if (FSM.current_state == FSM.states.IDLE):
@@ -69,5 +69,5 @@ func right_punch():
 func _on_face_hit(area_id, area, area_shape, self_shape):
 	.kick_back(2500)
 	$Player.play("Hit")
-	$AudioPlayer.play()
+	if world.sound_on: $AudioPlayer.play()
 	ScoreMan.update(player_data)

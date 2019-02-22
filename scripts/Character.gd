@@ -77,10 +77,13 @@ func animate():
 			if not $Player.is_playing():
 				$Player.play("Idle")
 		
+func character_is_moving():
+	return FSM.assert_state(FSM.states.HIT) or FSM.assert_state(FSM.states.LEFT) or FSM.assert_state(FSM.states.RIGHT)
+	
 func change_status(finished_animation):
-	if !FSM.assert_state(FSM.states.IDLE) and !FSM.assert_state(FSM.states.PAUSE):
+	if character_is_moving():
 		reset_status()
-		
+
 func reset_status():
 	set_state(FSM.events.IDLE)
 

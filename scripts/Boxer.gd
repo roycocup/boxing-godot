@@ -7,11 +7,11 @@ func _ready():
 func _physics_process(delta):
 	# only process these if we are idle
 	# if we are not idle, let the animations run and end
-	if (.get_state() == FSM.states.IDLE):
+	if (FSM.assert_state(FSM.states.IDLE)):
 		movement()
 		shots()
 		animate()
-	if (.get_state() == FSM.states.PAUSE):
+	if (FSM.assert_state(FSM.states.PAUSE)):
 		animate()
 	
 func shots():
@@ -36,7 +36,7 @@ func _on_face_hit(area_id, area, area_shape, self_shape):
 	.set_state(FSM.events.HIT)
 	.kick_back(-2500)
 	$Player.play("Hit")
-	$AudioPlayer.play()
+	if world.sound_on: $AudioPlayer.play()
 	ScoreMan.update(player_data)
 
 

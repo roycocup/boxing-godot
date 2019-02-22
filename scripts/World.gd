@@ -7,6 +7,7 @@ const GAME_DONE = 3
 
 var Level = 1
 var State = null
+export var sound_on = false
 
 var fsm = load('res://scripts/FSM.gd').new()
 var helper = load('res://scripts/Helper.gd').new()
@@ -58,12 +59,12 @@ func quit_by_esc():
 
 func start_round():
 	# play animations for round etc
-	$Bell.play()
+	if sound_on: $Bell.play()
 	set_state(RUNNING)
 
 func do_game_over():
 	uiManager.show_game_over()
 	Players['p1'].set_state(fsm.events.PAUSE)
 	Players['p2'].set_state(fsm.events.PAUSE)
-	$Bell.play()
+	if sound_on: $Bell.play()
 	set_state(GAME_DONE)
