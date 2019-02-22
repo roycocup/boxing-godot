@@ -48,7 +48,7 @@ func init_states():
 	FSM.current_state = FSM.states.IDLE
 
 func _physics_process(delta):
-	if (FSM.current_state == FSM.states.IDLE):
+	if (FSM.assert_state(FSM.states.IDLE)):
 		movement()
 		shots()
 		animate()
@@ -78,11 +78,11 @@ func animate():
 				$Player.play("Idle")
 		
 func change_status(finished_animation):
-	if FSM.current_state != FSM.states.IDLE and FSM.current_state != FSM.states.PAUSE:
+	if !FSM.assert_state(FSM.states.IDLE) and !FSM.assert_state(FSM.states.PAUSE):
 		reset_status()
 		
 func reset_status():
-	FSM.current_state = FSM.states.IDLE
+	set_state(FSM.events.IDLE)
 
 func frame_count():
 	frame = frame + 1
@@ -99,4 +99,4 @@ func set_state(event):
 	FSM.handle(event)
 
 func get_state():
-	return FSM.current_state
+	return FSM.get_state()

@@ -7,6 +7,9 @@ var registered_states = []
 var current_state = null
 var next_state = null
 
+func set_state(state):
+	current_state = state
+
 func get_state():
 	return current_state
 

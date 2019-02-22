@@ -15,8 +15,6 @@ func _physics_process(delta):
 		animate()
 	
 func shots():
-	if Input.is_key_pressed(KEY_S):
-		print(.get_state())
 	if Input.is_action_just_pressed("fire_1"):
 		.set_state(FSM.events.LEFT)
 	if Input.is_action_just_pressed("fire_2"):
