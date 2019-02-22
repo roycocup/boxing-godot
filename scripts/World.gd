@@ -21,23 +21,18 @@ onready var UI = {
 
 func _ready():
 	set_process(true)
-	#$Bell.play()
 	set_state(ROUND_START)
 
 func _process(delta):
 	quit_by_esc()
 	match(get_state()):
 		GAME_DONE:
-			print(Players['p1'].get_state())
 			return
 		GAME_OVER:
-			uiManager.show_game_over()
-			Players['p1'].set_state(fsm.events.PAUSE)
-			Players['p2'].set_state(fsm.events.PAUSE)
-			set_state(GAME_DONE)
-		RUNNING:
-			continue
+			do_game_over()
 		ROUND_START:
+			start_round()
+		RUNNING:
 			continue
 		_:
 			update_state()
@@ -60,3 +55,15 @@ func quit():
 func quit_by_esc():
 	if Input.is_action_pressed("exit"):
 		quit()
+
+func start_round():
+	# play animations for round etc
+	$Bell.play()
+	set_state(RUNNING)
+
+func do_game_over():
+	uiManager.show_game_over()
+	Players['p1'].set_state(fsm.events.PAUSE)
+	Players['p2'].set_state(fsm.events.PAUSE)
+	$Bell.play()
+	set_state(GAME_DONE)
