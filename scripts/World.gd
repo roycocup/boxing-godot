@@ -28,6 +28,7 @@ func _process(delta):
 	quit_by_esc()
 	match(get_state()):
 		GAME_DONE:
+			print(Players['p1'].get_state())
 			return
 		GAME_OVER:
 			uiManager.show_game_over()
@@ -44,12 +45,7 @@ func _process(delta):
 			uiManager.update(UI, score.get_score_map(), $Timer)
 
 func set_state(new_state):
-	print(new_state)
 	State = new_state
-
-func assert_state(state):
-	if get_state() == state: return true
-	return false
 
 func get_state():
 	return State

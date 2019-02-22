@@ -78,7 +78,7 @@ func animate():
 				$Player.play("Idle")
 		
 func change_status(finished_animation):
-	if (FSM.current_state != FSM.states.IDLE):
+	if FSM.current_state != FSM.states.IDLE and FSM.current_state != FSM.states.PAUSE:
 		reset_status()
 		
 func reset_status():

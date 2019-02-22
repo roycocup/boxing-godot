@@ -7,6 +7,13 @@ var registered_states = []
 var current_state = null
 var next_state = null
 
+func get_state():
+	return current_state
+
+func assert_state(state):
+	if get_state() == state: return true
+	return false
+
 func add_state(state, allowed):	
 	var s = State.new()
 	s.current = state
