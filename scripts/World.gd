@@ -1,16 +1,17 @@
 extends Node2D
 
-const RUNNING = 0
-const GAME_OVER = 1
-const ROUND_START = 2
+const ROUND_START = 0
+const RUNNING = 1
+const GAME_OVER = 2
+const GAME_DONE = 3
 
 var Level = 1
-var State = ROUND_START
+var State = null
 
 var fsm = load('res://scripts/FSM.gd').new()
 var helper = load('res://scripts/Helper.gd').new()
-var ui = load('res://scripts/UiManager.gd').new()
 var score = load('res://scripts/ScoreManager.gd').new()
+onready var uiManager = load('res://scripts/UiManager.gd').new(get_tree())
 onready var Players = {'p1':$Canvas/Boxer, 'p2':$Canvas/AI}
 onready var UI = {
 	'p1_score':$UI/HBoxContainer/MarginContainer/p1_Score,
@@ -21,20 +22,34 @@ onready var UI = {
 func _ready():
 	set_process(true)
 	#$Bell.play()
+	set_state(ROUND_START)
 
 func _process(delta):
 	quit_by_esc()
-	update_state()
-	if get_state() == GAME_OVER:
-		# ui.show_game_over()
-		Players['p1'].set_state(fsm.events.PAUSE)
-		Players['p2'].set_state(fsm.events.PAUSE)
-	else:
-		score.save()
-		ui.update(UI, score.get_score_map(), $Timer)
+	match(get_state()):
+		GAME_DONE:
+			return
+		GAME_OVER:
+			uiManager.show_game_over()
+			Players['p1'].set_state(fsm.events.PAUSE)
+			Players['p2'].set_state(fsm.events.PAUSE)
+			set_state(GAME_DONE)
+		RUNNING:
+			continue
+		ROUND_START:
+			continue
+		_:
+			update_state()
+			score.save()
+			uiManager.update(UI, score.get_score_map(), $Timer)
 
 func set_state(new_state):
+	print(new_state)
 	State = new_state
+
+func assert_state(state):
+	if get_state() == state: return true
+	return false
 
 func get_state():
 	return State
@@ -49,9 +64,3 @@ func quit():
 func quit_by_esc():
 	if Input.is_action_pressed("exit"):
 		quit()
-
-
-		
-	
-
-
