@@ -1,0 +1,47 @@
+
+Todo:
+
+  Fighters:
+    ✘ Modulate colours on players so we get more players @cancelled(19-02-23 08:38)
+    ✔ Make hurtboxes smaller, like just the tip of the nose @done (23/02/2019, 08:39:20)
+    ✔ FSM for opponent @done (23/02/2019, 08:39:23)
+    ✔ AI Opponent @done (23/02/2019, 08:39:25)
+    ☐ Hit explosion and effects
+    ☐ Super punch!
+    ☐ Stamina
+    ☐ Different punches strenghts and change the game goal from "points per time" to healthpoints
+    ☐ Tired and punch speed
+    ☐ Rename enemy to opponent
+
+  Android:
+    ☐ General controls for mobile
+    ☐ change Viewport size to landscape 768x429
+  
+  Main Menu :
+    ☐ Logo and Flash intro
+    ☐ Start, Quit
+    ☐ Options if any
+  
+  Game:
+    ☐ Audio
+    ✔ Punching sounds @done (23/02/2019, 08:39:34)
+    ✔ Round & start Bell @done (23/02/2019, 08:39:36)
+    ✔ Scoring system @done (23/02/2019, 08:39:39)
+  
+  Logic :
+    ☐ Round Start 3,2,1
+    ✔ Timer @done (23/02/2019, 08:39:43)
+    ☐ Hitpoints or healthpoints?
+    ☐ Rounds
+
+  AI:
+    ☐ Harder opponent
+
+  Multiplayer:
+    https://www.gamefromscratch.com/page/Godot-3-Tutorial-Networking.aspx
+    ☐ Rooms
+    ☐ Join
+    ☐ Invite
+    ☐ General interaction
+  
+  
