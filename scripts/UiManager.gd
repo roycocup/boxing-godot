@@ -4,7 +4,7 @@ var helper = load('res://scripts/Helper.gd').new()
 var player = null
 
 func _init(tree):
-	player = tree.get_root().get_node('/root/World/GameOverOverlay/AnimationPlayer')
+	player = tree.get_root().get_node('/root/World/UIAnimationPlayer')
 
 func update(UI, score, timer):
 	UI['time'].text = helper.get_time_left_str(timer)
