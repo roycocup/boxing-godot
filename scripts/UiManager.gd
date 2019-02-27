@@ -15,3 +15,7 @@ func show_game_over():
 	if !player.is_playing():
 		player.play('GameOver')
 
+func show_count_down():
+	if !player.is_playing():
+		player.play('CountDown')
+

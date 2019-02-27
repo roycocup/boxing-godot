@@ -34,6 +34,7 @@ func _process(delta):
 		ROUND_START:
 			start_round()
 		RUNNING:
+			ensure_running()
 			continue
 		_:
 			update_state()
@@ -58,9 +59,17 @@ func quit_by_esc():
 		quit()
 
 func start_round():
-	# play animations for round etc
+	Players['p1'].set_state(fsm.events.PAUSE)
+	Players['p2'].set_state(fsm.events.PAUSE)
+	uiManager.show_count_down()
 	if sound_on: $Bell.play()
 	set_state(RUNNING)
+	
+func ensure_running():
+	if !Players['p1'].assert_state(fsm.events.IDLE):
+		Players['p1'].set_state(fsm.events.IDLE)
+	if !Players['p2'].assert_state(fsm.events.IDLE):
+		Players['p2'].set_state(fsm.events.IDLE)
 
 func do_game_over():
 	uiManager.show_game_over()

@@ -98,6 +98,11 @@ func random_option(options):
 	var sel = (randi() % num_options) + 1
 	return options[sel]
 
+func assert_state(state):
+	if get_state() != state:
+		return false
+	return true
+
 func set_state(event):
 	FSM.handle(event)
 
