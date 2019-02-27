@@ -71,9 +71,9 @@ func ensure_running():
 	if !Players['p2'].assert_state(fsm.events.IDLE):
 		Players['p2'].set_state(fsm.events.IDLE)
 
-func do_game_over():
-	uiManager.show_game_over()
+func do_game_over():	
 	Players['p1'].set_state(fsm.events.PAUSE)
 	Players['p2'].set_state(fsm.events.PAUSE)
+	uiManager.show_game_over()
 	if sound_on: $Bell.play()
 	set_state(GAME_DONE)
