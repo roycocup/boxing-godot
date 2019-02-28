@@ -13,7 +13,7 @@ var fsm = load('res://scripts/FSM.gd').new()
 var helper = load('res://scripts/Helper.gd').new()
 var score = load('res://scripts/ScoreManager.gd').new()
 onready var uiManager = load('res://scripts/UiManager.gd').new(get_tree())
-onready var Players = {'p1':$Canvas/Boxer, 'p2':$Canvas/AI}
+onready var Players = {'p1':$Canvas/Boxer, 'p2':$Canvas/Opponent}
 onready var UI = {
 	'p1_score':$UI/HBoxContainer/MarginContainer/p1_Score,
 	'p2_score':$UI/HBoxContainer/p2_Score,
@@ -71,7 +71,7 @@ func ensure_running():
 	if !Players['p2'].assert_state(fsm.events.IDLE):
 		Players['p2'].set_state(fsm.events.IDLE)
 
-func do_game_over():	
+func do_game_over():
 	Players['p1'].set_state(fsm.events.PAUSE)
 	Players['p2'].set_state(fsm.events.PAUSE)
 	uiManager.show_game_over()

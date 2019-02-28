@@ -9,7 +9,7 @@
 [ext_resource path="res://fonts/AtariST8x16SystemFont.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://fonts/CountDown.ttf" type="DynamicFontData" id=8]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 
 size = 0
 use_mipmaps = false
@@ -17,7 +17,7 @@ use_filter = false
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 
 size = 0
 use_mipmaps = false
@@ -132,7 +132,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Game Over"
 align = 1
 valign = 1
@@ -173,7 +173,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "3"
 align = 1
 valign = 1
@@ -196,7 +196,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "2"
 align = 1
 valign = 1
@@ -219,7 +219,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "1"
 align = 1
 valign = 1
@@ -242,7 +242,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Box!"
 align = 1
 valign = 1

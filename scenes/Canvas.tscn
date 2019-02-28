@@ -116,7 +116,7 @@ _sections_unfolded = [ "Visibility" ]
 
 position = Vector2( -85.9183, 0 )
 
-[node name="AI" parent="." index="3" instance=ExtResource( 3 )]
+[node name="Opponent" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 95, 0.000121554 )
 
