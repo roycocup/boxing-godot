@@ -34,7 +34,7 @@ func _process(delta):
 		ROUND_START:
 			start_round()
 		RUNNING:
-			ensure_running()
+			start_players()
 			continue
 		_:
 			update_state()
@@ -59,21 +59,26 @@ func quit_by_esc():
 		quit()
 
 func start_round():
-	Players['p1'].set_state(fsm.events.PAUSE)
-	Players['p2'].set_state(fsm.events.PAUSE)
+	pause_players()
 	uiManager.show_count_down()
 	if sound_on: $Bell.play()
 	set_state(RUNNING)
 	
-func ensure_running():
+func do_game_over():
+	pause_players()
+	uiManager.show_game_over()
+	if sound_on: $Bell.play()
+	set_state(GAME_DONE)
+	
+func start_players():
 	if !Players['p1'].assert_state(fsm.events.IDLE):
 		Players['p1'].set_state(fsm.events.IDLE)
 	if !Players['p2'].assert_state(fsm.events.IDLE):
 		Players['p2'].set_state(fsm.events.IDLE)
 
-func do_game_over():
-	Players['p1'].set_state(fsm.events.PAUSE)
-	Players['p2'].set_state(fsm.events.PAUSE)
-	uiManager.show_game_over()
-	if sound_on: $Bell.play()
-	set_state(GAME_DONE)
+func pause_players():
+	if !Players['p1'].assert_state(fsm.events.PAUSE):
+		Players['p1'].set_state(fsm.events.PAUSE)
+	if !Players['p2'].assert_state(fsm.events.PAUSE):
+		Players['p2'].set_state(fsm.events.PAUSE)
+	print(Players['p2'].get_state())
