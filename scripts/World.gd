@@ -80,5 +80,5 @@ func pause_players():
 	if !Players['p1'].assert_state(fsm.events.PAUSE):
 		Players['p1'].set_state(fsm.events.PAUSE)
 	if !Players['p2'].assert_state(fsm.events.PAUSE):
-		Players['p2'].set_state(fsm.events.PAUSE)
-	print(Players['p2'].get_state())
+		Players['p2'].set_state(fsm.events.PAUSE)	
+
