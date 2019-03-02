@@ -40,6 +40,8 @@ __meta__ = {
 "_edit_vertical_guides_": [ -43.7498 ]
 }
 velocity = 200
+stamina = 100
+power = 100
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

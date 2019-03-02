@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var velocity = 1
+
 var pos
 var hit = false
 var canvas = null
@@ -10,6 +10,14 @@ onready var ScoreMan = world.score
 onready var score = world.score.get_score_map()
 var player_data = {}
 var frame = 0
+
+
+# Character basic properties
+export var velocity = 1
+export var stamina = 100
+export var power = 100
+var healthpoints = 100
+var hitpoints = 100
 
 
 func _ready():

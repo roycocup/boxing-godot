@@ -6,11 +6,12 @@ Todo:
     ✔ Make hurtboxes smaller, like just the tip of the nose @done (23/02/2019, 08:39:20)
     ✔ FSM for opponent @done (23/02/2019, 08:39:23)
     ✔ AI Opponent @done (23/02/2019, 08:39:25)
+    ☐ Stamina levels
+      ☐ punch speed (animation) changes
+      ☐ indication on the punch power
+      ☐ Switch to hit/health points
+      ☐ Super punch!
     ☐ Hit explosion and effects
-    ☐ Super punch!
-    ☐ Stamina
-    ☐ Different punches strenghts and change the game goal from "points per time" to healthpoints
-    ☐ Tired and punch speed
     ☐ Rename enemy to opponent
     ☐ Invert players 
 
@@ -30,6 +31,7 @@ Todo:
     ✔ Scoring system @done (23/02/2019, 08:39:39)
   
   Logic :
+    ✔ Game start in 1,2,3 @done (02/03/2019, 20:18:50)
     ☐ Round Start 3,2,1
     ✔ Timer @done (23/02/2019, 08:39:43)
     ☐ Hitpoints or healthpoints?
