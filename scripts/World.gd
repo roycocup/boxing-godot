@@ -20,6 +20,8 @@ onready var UI = {
 	'time':$UI/HBoxContainer/MarginContainer2/time,
 }
 
+var animations_finished = true
+
 func _ready():
 	set_process(true)
 	set_state(ROUND_START)
@@ -61,6 +63,10 @@ func quit_by_esc():
 func start_round():
 	pause_players()
 	uiManager.show_count_down()
+	# https://docs.godotengine.org/en/3.0/getting_started/scripting/gdscript/gdscript_basics.html?highlight=yield#coroutines-with-yield
+	# This binds to UiManager which emits a signal ('playing_finished') 
+	# when the player also emits its own signal to UiManager object
+	yield(uiManager, "playing_finished")
 	if sound_on: $Bell.play()
 	set_state(RUNNING)
 	
@@ -80,5 +86,7 @@ func pause_players():
 	if !Players['p1'].assert_state(fsm.events.PAUSE):
 		Players['p1'].set_state(fsm.events.PAUSE)
 	if !Players['p2'].assert_state(fsm.events.PAUSE):
-		Players['p2'].set_state(fsm.events.PAUSE)	
+		Players['p2'].set_state(fsm.events.PAUSE)
 
+func _on_UiManager_playing_finished():
+	animations_finished = true

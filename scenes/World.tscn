@@ -64,7 +64,6 @@ _sections_unfolded = [ "Editor", "Transform" ]
 
 [node name="UiManager" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="UIAnimationPlayer" type="AnimationPlayer" parent="UiManager" index="0"]
@@ -257,5 +256,9 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Visibility", "custom_fonts" ]
+
+[connection signal="playing_finished" from="UiManager" to="." method="_on_UiManager_playing_finished"]
+
+[connection signal="animation_finished" from="UiManager/UIAnimationPlayer" to="UiManager" method="_on_UIAnimationPlayer_animation_finished"]
 
 
