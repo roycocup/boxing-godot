@@ -38,5 +38,3 @@ func _on_face_hit(area_id, area, area_shape, self_shape):
 	$Player.play("Hit")
 	if world.sound_on: $AudioPlayer.play()
 	ScoreMan.update(player_data)
-
-

@@ -12,7 +12,7 @@ export var sound_on = false
 var fsm = load('res://scripts/FSM.gd').new()
 var helper = load('res://scripts/Helper.gd').new()
 var score = load('res://scripts/ScoreManager.gd').new()
-onready var uiManager = load('res://scripts/UiManager.gd').new(get_tree())
+onready var uiManager = $UiManager
 onready var Players = {'p1':$Canvas/Boxer, 'p2':$Canvas/Opponent}
 onready var UI = {
 	'p1_score':$UI/HBoxContainer/MarginContainer/p1_Score,
