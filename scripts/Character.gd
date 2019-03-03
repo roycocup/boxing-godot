@@ -18,6 +18,7 @@ export var stamina = 100
 export var power = 100
 var healthpoints = 100
 var hitpoints = 100
+signal been_hit
 
 
 func _ready():

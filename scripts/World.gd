@@ -8,6 +8,7 @@ const GAME_DONE = 3
 var Level = 1
 var State = null
 export var sound_on = false
+export var round_on = false
 
 var fsm = load('res://scripts/FSM.gd').new()
 var helper = load('res://scripts/Helper.gd').new()
@@ -24,7 +25,9 @@ var animations_finished = true
 
 func _ready():
 	set_process(true)
-	set_state(ROUND_START)
+	set_state(RUNNING)
+	if round_on == true:
+		set_state(ROUND_START)
 
 func _process(delta):
 	quit_by_esc()

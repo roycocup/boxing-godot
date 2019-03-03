@@ -26,7 +26,7 @@ use_filter = false
 font_data = ExtResource( 9 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -34,6 +34,7 @@ __meta__ = {
 "_edit_vertical_guides_": [ 512.758 ]
 }
 sound_on = false
+round_on = false
 
 [node name="Camera2D" type="Camera2D" parent="." index="0"]
 
@@ -64,6 +65,7 @@ _sections_unfolded = [ "Editor", "Transform" ]
 
 [node name="UiManager" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="UIAnimationPlayer" type="AnimationPlayer" parent="UiManager" index="0"]
