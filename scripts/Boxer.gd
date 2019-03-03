@@ -33,6 +33,7 @@ func movement():
 		move_and_slide(Vector2(0, velocity), Vector2())
 		
 func _on_face_hit(area_id, area, area_shape, self_shape):
+	var other = .get_other_boxer_from_collision(area)
 	.set_state(FSM.events.HIT)
 	.kick_back(-2500)
 	$Player.play("Hit")
