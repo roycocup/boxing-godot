@@ -13,12 +13,10 @@ var frame = 0
 
 
 # Character basic properties
-export var velocity = 1
+export var velocity = 200
 export var stamina = 100
 export var power = 100
-var healthpoints = 10000
-var hitpoints = 100
-signal been_hit
+export var healthpoints = 10000
 
 
 func _ready():

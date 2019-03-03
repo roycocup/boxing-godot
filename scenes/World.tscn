@@ -86,12 +86,6 @@ position = Vector2( 506.187, 301.092 )
 
 [node name="UI" parent="." index="3" instance=ExtResource( 6 )]
 
-margin_left = -10.0
-margin_top = -210.0
-margin_right = -10.0
-margin_bottom = -274.0
-_sections_unfolded = [ "Rect" ]
-
 [node name="Bell" type="AudioStreamPlayer" parent="." index="4"]
 
 stream = ExtResource( 7 )

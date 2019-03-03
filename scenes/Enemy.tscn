@@ -161,6 +161,7 @@ _sections_unfolded = [ "Collision", "Material", "Transform", "Visibility", "coll
 velocity = 200
 stamina = 100
 power = 100
+healthpoints = 10000
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

@@ -7,8 +7,10 @@ Todo:
     ✔ FSM for opponent @done (23/02/2019, 08:39:23)
     ✔ AI Opponent @done (23/02/2019, 08:39:25)
     ☐ Stamina levels
+      ✔ Have health levels affected by punches @done (03/03/2019, 13:39:21)
       ☐ punch speed (animation) changes
       ☐ indication on the punch power
+        ☐ isnt power = stamina?
       ☐ Switch to hit/health points
       ☐ Super punch!
     ☐ Hit explosion and effects

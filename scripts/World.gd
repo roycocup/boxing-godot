@@ -16,12 +16,10 @@ var score = load('res://scripts/ScoreManager.gd').new()
 onready var uiManager = $UiManager
 onready var Players = {'p1':$Canvas/Boxer, 'p2':$Canvas/Opponent}
 onready var UI = {
-	'p1_score':$UI/HBoxContainer/MarginContainer/p1_Score,
-	'p2_score':$UI/HBoxContainer/p2_Score,
-	'time':$UI/HBoxContainer/MarginContainer2/time,
+	'p1_score':$UI/PanelContainer/HBoxContainer/p1_Score,
+	'p2_score':$UI/PanelContainer/HBoxContainer/p2_Score,
+	'time':$UI/PanelContainer/HBoxContainer/time,
 }
-
-var animations_finished = true
 
 func _ready():
 	set_process(true)
@@ -91,5 +89,3 @@ func pause_players():
 	if !Players['p2'].assert_state(fsm.events.PAUSE):
 		Players['p2'].set_state(fsm.events.PAUSE)
 
-func _on_UiManager_playing_finished():
-	animations_finished = true

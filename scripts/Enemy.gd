@@ -67,7 +67,6 @@ func right_punch():
 	
 func _on_face_hit(area_id, area, area_shape, self_shape):
 	.take_hit_on_health(area)
-	print(healthpoints)
 	.kick_back(2500)
 	$Player.play("Hit")
 	if world.sound_on: $AudioPlayer.play()
