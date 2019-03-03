@@ -29,7 +29,7 @@ func shots():
 			.set_state(FSM.events.RIGHT)
 		else:
 			# FIXME: Weird bug coming here
-			.random_option(.set_state(FSM.events.LEFT), .set_state(FSM.events.RIGHT))
+			.random_option([.set_state(FSM.events.LEFT), .set_state(FSM.events.RIGHT)])
 
 func movement():
 	if (is_winning()):

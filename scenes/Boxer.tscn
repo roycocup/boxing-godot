@@ -28,7 +28,7 @@ extents = Vector2( 26.3675, 33.7837 )
 custom_solver_bias = 0.0
 extents = Vector2( 67.554, 114.093 )
 
-[node name="Boxer" type="KinematicBody2D"]
+[node name="Boxer" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -148,6 +148,7 @@ color = Color( 1, 1, 1, 1 )
 
 [node name="Hitbox" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
 visible = false
 position = Vector2( -18.1818, 2.62237 )
 
