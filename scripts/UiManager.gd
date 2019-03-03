@@ -9,7 +9,7 @@ onready var time = hud.get_node('time')
 onready var p1_score = hud.get_node('p1_Score')
 onready var p2_score = hud.get_node('p2_Score')
 onready var p1_stats = hud.get_node('p1_Stats')
-onready var p1_stats = hud.get_node('p2_Stats')
+onready var p2_stats = hud.get_node('p2_Stats')
 
 func _ready():
 	player = $UIAnimationPlayer
