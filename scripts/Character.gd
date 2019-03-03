@@ -101,10 +101,9 @@ func frame_count():
 	if (frame >= 60):
 		frame = 0
 
-func random_option(options):
-	var num_options = count(options)
+func random_option(options):	
 	randomize()
-	var sel = (randi() % num_options) + 1
+	var sel = (randi() % options.size()-1) + 1
 	return options[sel]
 
 func assert_state(state):

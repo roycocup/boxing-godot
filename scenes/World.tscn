@@ -26,7 +26,7 @@ use_filter = false
 font_data = ExtResource( 9 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -104,7 +104,7 @@ bus = "Master"
 [node name="Timer" type="Timer" parent="." index="5"]
 
 process_mode = 0
-wait_time = 15.0
+wait_time = 90.0
 one_shot = true
 autostart = true
 
