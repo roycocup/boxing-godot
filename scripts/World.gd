@@ -15,11 +15,7 @@ var helper = load('res://scripts/Helper.gd').new()
 var score = load('res://scripts/ScoreManager.gd').new()
 onready var uiManager = $UiManager
 onready var Players = {'p1':$Canvas/Boxer, 'p2':$Canvas/Opponent}
-onready var UI = {
-	'p1_score':$UI/PanelContainer/HBoxContainer/p1_Score,
-	'p2_score':$UI/PanelContainer/HBoxContainer/p2_Score,
-	'time':$UI/PanelContainer/HBoxContainer/time,
-}
+
 
 func _ready():
 	set_process(true)
@@ -42,7 +38,7 @@ func _process(delta):
 		_:
 			update_state()
 			score.save()
-			uiManager.update(UI, score.get_score_map(), $Timer)
+			uiManager.update(score.get_score_map(), $Timer)
 
 func set_state(new_state):
 	State = new_state

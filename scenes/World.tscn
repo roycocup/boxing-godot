@@ -4,8 +4,8 @@
 [ext_resource path="res://scripts/UiManager.gd" type="Script" id=2]
 [ext_resource path="res://animations/CountDown.tres" type="Animation" id=3]
 [ext_resource path="res://animations/GameOver.tres" type="Animation" id=4]
-[ext_resource path="res://scenes/Canvas.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Canvas.tscn" type="PackedScene" id=6]
 [ext_resource path="res://audio/ringbell.ogg" type="AudioStream" id=7]
 [ext_resource path="res://fonts/AtariST8x16SystemFont.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://fonts/CountDown.ttf" type="DynamicFontData" id=9]
@@ -26,7 +26,7 @@ use_filter = false
 font_data = ExtResource( 9 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -80,11 +80,11 @@ anims/GameOver = ExtResource( 4 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="Canvas" parent="." index="2" instance=ExtResource( 5 )]
+[node name="Hud" parent="." index="2" instance=ExtResource( 5 )]
+
+[node name="Canvas" parent="." index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 506.187, 301.092 )
-
-[node name="UI" parent="." index="3" instance=ExtResource( 6 )]
 
 [node name="Bell" type="AudioStreamPlayer" parent="." index="4"]
 
