@@ -148,7 +148,7 @@ color = Color( 1, 1, 1, 1 )
 
 [node name="Hitbox" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
+visible = false
 position = Vector2( -18.1818, 2.62237 )
 
 [node name="Area2D" type="Area2D" parent="Hitbox" index="0"]
@@ -162,6 +162,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Pickable" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox/Area2D" index="0"]
 
@@ -169,7 +170,7 @@ position = Vector2( 5.34027, 0.717016 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="4"]
+[node name="BodyBounds" type="CollisionShape2D" parent="." index="4"]
 
 visible = false
 position = Vector2( -55.9232, 0.998627 )
