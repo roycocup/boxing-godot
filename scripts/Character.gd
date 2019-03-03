@@ -123,3 +123,7 @@ func get_other_boxer_from_collision(area):
 	else:
 		print("Unable to get other boxer from area")
 		return 0
+
+func take_hit_on_health(area):
+	var other = get_other_boxer_from_collision(area)
+	healthpoints -= other.power

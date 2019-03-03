@@ -66,8 +66,7 @@ func right_punch():
 	$Player.play("Right")
 	
 func _on_face_hit(area_id, area, area_shape, self_shape):
-	var other = .get_other_boxer_from_collision(area)
-	healthpoints -= other.power
+	.take_hit_on_health(area)
 	print(healthpoints)
 	.kick_back(2500)
 	$Player.play("Hit")
