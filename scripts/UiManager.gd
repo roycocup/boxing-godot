@@ -17,7 +17,7 @@ func _ready():
 func _process(delta):
 	pass
 
-func update(score, timer):
+func _update(score, timer):
 	var t = helper.get_time_left_str(timer)
 	time.set_text(t)
 	p1_score.set_text(str(score['p1']))

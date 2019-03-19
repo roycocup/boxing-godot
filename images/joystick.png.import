@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/joystick.png-8484419ce311de488950fa37cba0fdf4.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/joystick.png"
-source_md5="689089f8f1c44f71469ee0e4d1298560"
-
 dest_files=[ "res://.import/joystick.png-8484419ce311de488950fa37cba0fdf4.stex" ]
-dest_md5="e8db9cf6efefcdcbfa3b4c5456ded9e0"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

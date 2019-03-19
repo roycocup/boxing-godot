@@ -38,7 +38,7 @@ func _process(delta):
 		_:
 			update_state()
 			score.save()
-			uiManager.update(score.get_score_map(), $Timer)
+			uiManager._update(score.get_score_map(), $Timer)
 
 func set_state(new_state):
 	State = new_state

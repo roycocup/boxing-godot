@@ -1,5 +1,3 @@
-extends Node
-
 onready var Cache = preload("res://scripts/Cache.gd").new()
 
 var data = {}

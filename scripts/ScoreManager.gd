@@ -1,5 +1,3 @@
-extends Node2D
-
 var Cache = preload("res://scripts/Cache.gd").new()
 var score_map = {'p1':0, 'p2':0, 'is_dirty':false}
 
