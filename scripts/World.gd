@@ -5,16 +5,16 @@ const RUNNING = 1
 const GAME_OVER = 2
 const GAME_DONE = 3
 
-var Level = 1
+var Level : int = 1
 var State = null
-export var sound_on = false
-export var round_on = false
+export var sound_on : bool = false
+export var round_on : bool = false
 
 var fsm = load('res://scripts/FSM.gd').new()
 var helper = load('res://scripts/Helper.gd').new()
 var score = load('res://scripts/ScoreManager.gd').new()
-onready var uiManager = $UiManager
-onready var Players = {'p1':$Canvas/Boxer, 'p2':$Canvas/Opponent}
+onready var uiManager : Node = $UiManager
+onready var Players : Dictionary = {'p1':$Canvas/Boxer, 'p2':$Canvas/Opponent}
 
 
 func _ready():
@@ -23,7 +23,7 @@ func _ready():
 	if round_on == true:
 		set_state(ROUND_START)
 
-func _process(delta):
+func _process(delta : float):
 	quit_by_esc()
 	match(get_state()):
 		GAME_DONE:
@@ -40,7 +40,7 @@ func _process(delta):
 			score.save()
 			uiManager._update(score.get_score_map(), $Timer)
 
-func set_state(new_state):
+func set_state(new_state :int):
 	State = new_state
 
 func get_state():
