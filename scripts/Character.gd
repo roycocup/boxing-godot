@@ -104,7 +104,7 @@ func random_option(options):
 	var sel = (randi() % options.size()-1) + 1
 	return options[sel]
 
-func assert_state(state):
+func assert_state(state) -> bool:
 	if get_state() != state:
 		return false
 	return true

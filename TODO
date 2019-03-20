@@ -33,10 +33,10 @@ Todo:
   
   Logic :
     ✔ Game start in 1,2,3 @done (02/03/2019, 20:18:50)
-    ☐ Round Start 3,2,1
     ✔ Timer @done (23/02/2019, 08:39:43)
     ☐ Hitpoints or healthpoints?
-    ☐ Rounds
+    ☐ Rounds system
+    ☐ Round Start 3,2,1
 
   AI:
     ☐ Harder opponent
