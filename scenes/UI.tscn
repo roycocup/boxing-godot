@@ -3,411 +3,143 @@
 [ext_resource path="res://fonts/AtariST8x16SystemFont.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=1]
-
 size = 50
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 1 )
-_sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Container" type="CanvasLayer" index="0"]
+[node name="Container" type="CanvasLayer"]
 
-layer = 1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-
-[node name="PanelContainer" type="PanelContainer" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="PanelContainer" type="PanelContainer" parent="."]
 margin_right = 1022.0
 margin_bottom = 65.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 1015.0
 margin_bottom = 60.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_constants/separation = 100
 alignment = 1
-_sections_unfolded = [ "Material", "Pause", "custom_constants" ]
 
-[node name="p1_Stats" type="VBoxContainer" parent="PanelContainer/HBoxContainer" index="0"]
-
+[node name="p1_Stats" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 141.0
 margin_right = 341.0
 margin_bottom = 53.0
 rect_min_size = Vector2( 200, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="Health" type="ColorRect" parent="PanelContainer/HBoxContainer/p1_Stats" index="0"]
-
+[node name="Health" type="ColorRect" parent="PanelContainer/HBoxContainer/p1_Stats"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 200.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 0, 15 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 color = Color( 0.917969, 0.0322723, 0.0322723, 1 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/p1_Stats/Health" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/p1_Stats/Health"]
 margin_left = 10.0
 margin_right = 42.0
 margin_bottom = 14.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Health"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Margin" ]
 
-[node name="Power" type="ColorRect" parent="PanelContainer/HBoxContainer/p1_Stats" index="1"]
-
+[node name="Power" type="ColorRect" parent="PanelContainer/HBoxContainer/p1_Stats"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 19.0
 margin_right = 200.0
 margin_bottom = 34.0
 rect_min_size = Vector2( 0, 15 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 color = Color( 0.0174561, 0.34375, 0.0378494, 1 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/p1_Stats/Power" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/p1_Stats/Power"]
 margin_left = 10.0
 margin_right = 40.0
 margin_bottom = 14.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Power"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Margin" ]
 
-[node name="Stamina" type="ColorRect" parent="PanelContainer/HBoxContainer/p1_Stats" index="2"]
-
+[node name="Stamina" type="ColorRect" parent="PanelContainer/HBoxContainer/p1_Stats"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 38.0
 margin_right = 200.0
 margin_bottom = 53.0
 rect_min_size = Vector2( 0, 15 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 color = Color( 0.0428467, 0.0768785, 0.914062, 1 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/p1_Stats/Stamina" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/p1_Stats/Stamina"]
 margin_left = 10.0
 margin_right = 40.0
 margin_bottom = 14.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Stamina"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Margin" ]
 
-[node name="p1_Score" type="Label" parent="PanelContainer/HBoxContainer" index="1"]
-
+[node name="p1_Score" type="Label" parent="PanelContainer/HBoxContainer"]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 316.0
 margin_top = 1.0
 margin_right = 341.0
 margin_bottom = 52.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
 text = "0"
 align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
 
-[node name="time" type="Label" parent="PanelContainer/HBoxContainer" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="time" type="Label" parent="PanelContainer/HBoxContainer"]
 margin_left = 441.0
 margin_top = 1.0
 margin_right = 566.0
 margin_bottom = 52.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
 text = "00:00"
 align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_constants", "custom_fonts" ]
 
-[node name="p2_Score" type="Label" parent="PanelContainer/HBoxContainer" index="3"]
-
+[node name="p2_Score" type="Label" parent="PanelContainer/HBoxContainer"]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 604.0
 margin_top = 1.0
 margin_right = 629.0
 margin_bottom = 52.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
 text = "0"
 align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Focus", "custom_constants", "custom_fonts" ]
 
-[node name="p2_Stats" type="VBoxContainer" parent="PanelContainer/HBoxContainer" index="4"]
-
+[node name="p2_Stats" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 666.0
 margin_right = 866.0
 margin_bottom = 53.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="Health" type="ColorRect" parent="PanelContainer/HBoxContainer/p2_Stats" index="0"]
-
+[node name="Health" type="ColorRect" parent="PanelContainer/HBoxContainer/p2_Stats"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 200.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 200, 15 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 color = Color( 0.917969, 0.0322723, 0.0322723, 1 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/p2_Stats/Health" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/p2_Stats/Health"]
 margin_left = 10.0
 margin_right = 42.0
 margin_bottom = 14.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Health"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Margin" ]
 
-[node name="Power" type="ColorRect" parent="PanelContainer/HBoxContainer/p2_Stats" index="1"]
-
+[node name="Power" type="ColorRect" parent="PanelContainer/HBoxContainer/p2_Stats"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 19.0
 margin_right = 200.0
 margin_bottom = 34.0
 rect_min_size = Vector2( 200, 15 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 color = Color( 0.0174561, 0.34375, 0.0378494, 1 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/p2_Stats/Power" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/p2_Stats/Power"]
 margin_left = 10.0
 margin_right = 40.0
 margin_bottom = 14.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Power"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Margin" ]
 
-[node name="Stamina" type="ColorRect" parent="PanelContainer/HBoxContainer/p2_Stats" index="2"]
-
+[node name="Stamina" type="ColorRect" parent="PanelContainer/HBoxContainer/p2_Stats"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 38.0
 margin_right = 200.0
 margin_bottom = 53.0
 rect_min_size = Vector2( 200, 15 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 color = Color( 0.0428467, 0.0768785, 0.914062, 1 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/p2_Stats/Stamina" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/p2_Stats/Stamina"]
 margin_left = 10.0
 margin_right = 40.0
 margin_bottom = 14.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Stamina"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Margin" ]
-
-

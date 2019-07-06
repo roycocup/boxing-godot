@@ -1,23 +1,23 @@
 extends Node2D
 
-var helper : Node = load('res://scripts/Helper.gd').new()
-var player : AnimationPlayer
+var helper: Node = load('res://scripts/Helper.gd').new()
+var player: AnimationPlayer
 signal playing_finished
 
-onready var hud : Node = get_tree().get_root().get_node('World/Hud/PanelContainer/HBoxContainer')
-onready var time : Node = hud.get_node('time')
-onready var p1_score : Node = hud.get_node('p1_Score')
-onready var p2_score : Node = hud.get_node('p2_Score')
-onready var p1_stats : Node = hud.get_node('p1_Stats')
-onready var p2_stats : Node = hud.get_node('p2_Stats')
+onready var hud: Node = get_tree().get_root().get_node('World/Hud/PanelContainer/HBoxContainer')
+onready var time: Node = hud.get_node('time')
+onready var p1_score: Node = hud.get_node('p1_Score')
+onready var p2_score: Node = hud.get_node('p2_Score')
+onready var p1_stats: Node = hud.get_node('p1_Stats')
+onready var p2_stats: Node = hud.get_node('p2_Stats')
 
 func _ready():
 	player = $UIAnimationPlayer
 
-func _process(delta : float):
+func _process(delta: float):
 	pass
 
-func _update(score : Dictionary, timer : Timer):
+func _update(score: Dictionary, timer : Timer):
 	var t = helper.get_time_left_str(timer)
 	time.set_text(t)
 	p1_score.set_text(str(score['p1']))

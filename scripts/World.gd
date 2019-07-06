@@ -5,16 +5,16 @@ const RUNNING = 1
 const GAME_OVER = 2
 const GAME_DONE = 3
 
-var Level : int = 1
+var Level: int = 1
 var State = null
-export var sound_on : bool = false
-export var round_on : bool = false
+export var sound_on: bool = false
+export var round_on: bool = false
 
 var fsm = load('res://scripts/FSM.gd').new()
 var helper = load('res://scripts/Helper.gd').new()
 var score = load('res://scripts/ScoreManager.gd').new()
-onready var uiManager : Node = $UiManager
-onready var Players : Dictionary = {'p1':$Canvas/Boxer, 'p2':$Canvas/Opponent}
+onready var uiManager: Node = $UiManager
+onready var Players: Dictionary = {'p1':$Canvas/Boxer, 'p2':$Canvas/Opponent}
 
 
 func _ready():
