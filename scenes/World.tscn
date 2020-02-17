@@ -26,7 +26,6 @@ __meta__ = {
 "_edit_vertical_guides_": [ 512.758 ]
 }
 sound_on = true
-round_time = 10
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512.544, 304.524 )
@@ -116,12 +115,12 @@ align = 1
 valign = 1
 autowrap = true
 
-[node name="Audio" type="Node2D" parent="."]
+[node name="AudioManager" type="Node2D" parent="."]
 
-[node name="CrowdBackground" type="AudioStreamPlayer" parent="Audio"]
+[node name="CrowdBackground" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource( 10 )
 
-[node name="Bell" type="AudioStreamPlayer" parent="Audio"]
+[node name="Bell" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource( 7 )
 volume_db = -10.0
 [connection signal="playing_finished" from="UiManager" to="." method="_on_UiManager_playing_finished"]

@@ -9,184 +9,86 @@
 [ext_resource path="res://audio/punch3.ogg" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
 extents = Vector2( 32.005, 31.6886 )
 
 [sub_resource type="RectangleShape2D" id=2]
-
-custom_solver_bias = 0.0
 extents = Vector2( 32, 33.4851 )
 
 [sub_resource type="RectangleShape2D" id=3]
-
-custom_solver_bias = 0.0
 extents = Vector2( 26.3675, 33.7837 )
 
 [sub_resource type="RectangleShape2D" id=4]
-
-custom_solver_bias = 0.0
 extents = Vector2( 67.554, 114.093 )
 
 [node name="Boxer" type="KinematicBody2D"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
 __meta__ = {
 "_edit_vertical_guides_": [ -43.7498 ]
 }
-velocity = 200
-stamina = 100
-power = 100
-healthpoints = 10000
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
+[node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -3.59241, 0 )
 texture = ExtResource( 2 )
 offset = Vector2( 31, 0 )
 hframes = 20
-frame = 19
 region_rect = Rect2( 5514, 7, 380, 233 )
-_sections_unfolded = [ "Animation", "Offset", "Region" ]
 
-[node name="Player" type="AnimationPlayer" parent="." index="1"]
-
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
+[node name="Player" type="AnimationPlayer" parent="."]
 anims/Hit = ExtResource( 3 )
 anims/Idle = ExtResource( 4 )
 anims/Left = ExtResource( 5 )
 anims/Right = ExtResource( 6 )
-blend_times = [  ]
-_sections_unfolded = [ "Playback Options" ]
 
-[node name="Hurtboxes" type="Node2D" parent="." index="2"]
-
-editor/display_folded = true
+[node name="Hurtboxes" type="Node2D" parent="."]
 visible = false
 position = Vector2( -18.1818, 2.62237 )
 
-[node name="left_hand" type="Area2D" parent="Hurtboxes" index="0"]
-
+[node name="left_hand" type="Area2D" parent="Hurtboxes"]
 position = Vector2( -13.06, -85.0599 )
 scale = Vector2( 1.58518, 1.0018 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtboxes/left_hand" index="0"]
-
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtboxes/left_hand"]
 position = Vector2( 0.832577, 0.88604 )
 shape = SubResource( 1 )
 disabled = true
 
-[node name="ColorRect" type="ColorRect" parent="Hurtboxes/left_hand/CollisionShape2D" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ColorRect" type="ColorRect" parent="Hurtboxes/left_hand/CollisionShape2D"]
 margin_left = -9.0
 margin_top = -28.0
 margin_right = 32.0
 margin_bottom = 28.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 1, 1, 1, 1 )
 
-[node name="right_hand" type="Area2D" parent="Hurtboxes" index="1"]
-
+[node name="right_hand" type="Area2D" parent="Hurtboxes"]
 position = Vector2( 143.777, 88.5069 )
 scale = Vector2( 1.58518, 1.0018 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtboxes/right_hand" index="0"]
-
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtboxes/right_hand"]
 position = Vector2( 0.0141344, -0.0223656 )
 shape = SubResource( 2 )
 
-[node name="ColorRect" type="ColorRect" parent="Hurtboxes/right_hand/CollisionShape2D" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ColorRect" type="ColorRect" parent="Hurtboxes/right_hand/CollisionShape2D"]
 margin_left = -9.0
 margin_top = -21.0
 margin_right = 31.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 1, 1, 1, 1 )
 
-[node name="Hitbox" type="Node2D" parent="." index="3"]
-
-editor/display_folded = true
+[node name="Hitbox" type="Node2D" parent="."]
 visible = false
 position = Vector2( -18.1818, 2.62237 )
 
-[node name="Area2D" type="Area2D" parent="Hitbox" index="0"]
-
+[node name="Area2D" type="Area2D" parent="Hitbox"]
 position = Vector2( -28.0811, -0.179859 )
 scale = Vector2( 1, 0.343755 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision", "Pickable" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox/Area2D" index="0"]
-
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox/Area2D"]
 position = Vector2( 5.34027, 0.717016 )
 shape = SubResource( 3 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="BodyBounds" type="CollisionShape2D" parent="." index="4"]
-
+[node name="BodyBounds" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( -55.9232, 0.998627 )
 shape = SubResource( 4 )
 
-[node name="AudioPlayer" type="AudioStreamPlayer" parent="." index="5"]
-
+[node name="Punch" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
-
 [connection signal="area_shape_entered" from="Hitbox/Area2D" to="." method="_on_face_hit"]
-
-

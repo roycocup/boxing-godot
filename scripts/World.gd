@@ -15,6 +15,7 @@ var fsm = load('res://scripts/FSM.gd').new()
 var helper = load('res://scripts/Helper.gd').new()
 var score = load('res://scripts/ScoreManager.gd').new()
 onready var uiManager: Node = $UiManager
+onready var audioManager: Node = $AudioManager
 onready var Players: Dictionary = {'p1':$Canvas/Boxer, 'p2':$Canvas/Opponent}
 
 
@@ -22,7 +23,7 @@ func _ready():
 	set_process(true)
 	set_state(RUNNING)
 	if sound_on: 
-		$Audio/CrowdBackground.play()
+		$AudioManager/CrowdBackground.play()
 	if round_on == true:
 		set_state(ROUND_START)
 	$Timer.start(round_time)
@@ -69,14 +70,14 @@ func start_round():
 	# when the player also emits its own signal to UiManager object
 	yield(uiManager, "playing_finished")
 	if sound_on: 
-		$Audio/Bell.play()
+		$AudioManager/Bell.play()
 	set_state(RUNNING)
 	
 func do_game_over():
 	pause_players()
 	uiManager.show_game_over()
 	if sound_on: 
-		$Audio/Bell.play()
+		$AudioManager/Bell.play()
 	set_state(GAME_DONE)
 	
 func start_players():
