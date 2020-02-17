@@ -1,5 +1,12 @@
 Todo:
 
+  AI:
+    ☐ Harder opponent
+  
+  Android:
+    ☐ General controls for mobile
+    ☐ Change Viewport size to landscape 768x429
+
   Screens:
     ☐ Winner screen
     ☐ Multiplayer room
@@ -19,37 +26,21 @@ Todo:
     ✔ Make hurtboxes smaller, like just the tip of the nose @done (23/02/2019, 08:39:20)
     ✔ FSM for opponent @done (23/02/2019, 08:39:23)
     ✔ AI Opponent @done (23/02/2019, 08:39:25)
-    ✘ Stamina levels @cancelled(20-02-17 14:27)
-      ✔ Have health levels affected by punches @done (03/03/2019, 13:39:21)
-      ✘ punch speed (animation) changes @cancelled(20-02-17 14:27)
-      ✘ indication on the punch power @cancelled(20-02-17 14:27)
-        ✘ isnt power = stamina? @cancelled(20-02-17 14:27)
-      ✘ Switch to hit/health points @cancelled(20-02-17 14:27)
-      ✘ Super punch! @cancelled(20-02-17 14:27)    
     ✔ Rename enemy to opponent @done(20-02-17 14:32)
     ☐ Change the visual of the players back to black & white
     ☐ Invert players 
     ☐ Hit explosion and effects
 
-  Android:
-    ☐ General controls for mobile
-    ☐ Change Viewport size to landscape 768x429
-
   Audio:
-    ☐ In game audience sounds @started(20-02-17 14:50)
+    ✔ In game audience sounds @started(20-02-17 14:50) @done(20-02-17 16:16) @lasted(1h26m45s)
     ☐ Sound on each number of countdown
     ☐ Winner screen sound
     ☐ Main Menu sounds and music
   
   Logic :
     ✔ Game start in 1,2,3 @done (02/03/2019, 20:18:50)
-    ✔ Timer @done (23/02/2019, 08:39:43)
-    ☐ Hitpoints or healthpoints?
-    ☐ Rounds system
-    ☐ Round Start 3,2,1
-
-  AI:
-    ☐ Harder opponent
+    ✔ Timer @done (23/02/2019, 08:39:43)    
+    ✔ Round Start 3,2,1 @done(20-02-17 16:22)
 
   Multiplayer:
     https://www.gamefromscratch.com/page/Godot-3-Tutorial-Networking.aspx
@@ -57,5 +48,14 @@ Todo:
     ☐ Join
     ☐ Invite
     ☐ General interaction
+
+  Health System:
+    ☐ Stamina levels
+    ☐ Have health levels affected by punches
+    ☐ punch speed (animation) changes
+    ☐ indication on the punch power
+      ☐ isnt power = stamina?
+    ☐ Switch to hit/health points
+    ☐ Super punch!
   
   
