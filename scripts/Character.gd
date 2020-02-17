@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-
 var pos
 var hit = false
 var canvas = null
@@ -54,7 +53,8 @@ func init_states():
 	
 	FSM.current_state = FSM.states.IDLE
 
-func _physics_process(delta):
+func _physics_process(_delta):
+	frame_count()
 	if (FSM.assert_state(FSM.states.IDLE)):
 		movement()
 		shots()
@@ -67,9 +67,10 @@ func movement():
 	pass
 
 func kick_back(amount):
-	move_and_slide(Vector2(amount,0))
+	return move_and_slide(Vector2(amount,0))
 		
 func animate():
+	# Character basic properties	
 	match FSM.current_state:
 		FSM.states.HIT:
 			$Player.play("Hit")
@@ -87,7 +88,7 @@ func animate():
 func character_is_moving():
 	return FSM.assert_state(FSM.states.HIT) or FSM.assert_state(FSM.states.LEFT) or FSM.assert_state(FSM.states.RIGHT)
 	
-func change_status(finished_animation):
+func change_status(_finished_animation):
 	if character_is_moving():
 		reset_status()
 

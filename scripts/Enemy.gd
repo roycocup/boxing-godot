@@ -7,8 +7,7 @@ func _ready():
 	player_data['name'] = pname
 	AI._ready(player_data)
 
-func _physics_process(delta):
-	frame_count()
+func _physics_process(_delta):
 	# only move or throw punches if you are idle and not doing any other thing
 	if (FSM.current_state == FSM.states.IDLE):
 		animate()
@@ -21,7 +20,7 @@ func _physics_process(delta):
 func shots():
 	var opponent_pos = world.Players['p1'].position
 	var dist = opponent_pos - position
-	var direction = dist.normalized()
+	# var direction = dist.normalized()
 	if (abs(dist.x) < 120):
 		if (dist.y < 0):
 			.set_state(FSM.events.LEFT)
@@ -51,13 +50,13 @@ func chase():
 	var opponent_pos = world.Players['p1'].position
 	var dist = opponent_pos - position
 	var direction = dist.normalized()
-	move_and_slide(direction * velocity, Vector2())
+	return move_and_slide(direction * velocity, Vector2())
 
 func evade():
 	var opponent_pos = world.Players['p1'].position
 	var dist = opponent_pos - position
 	var direction = dist.normalized()
-	move_and_slide(-direction * velocity, Vector2())
+	return move_and_slide(-direction * velocity, Vector2())
 
 func left_punch():
 	$Player.play("Left")
@@ -65,7 +64,7 @@ func left_punch():
 func right_punch():
 	$Player.play("Right")
 	
-func _on_face_hit(area_id, area, area_shape, self_shape):
+func _on_face_hit(_area_id, area, _area_shape, _self_shape):
 	.take_hit_on_health(area)
 	.kick_back(2500)
 	$Player.play("Hit")

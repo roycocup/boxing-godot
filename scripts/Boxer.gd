@@ -4,7 +4,7 @@ func _ready():
 	player_data['name'] = 'p1'
 	._ready() # calling parent setup
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# only process these if we are idle
 	# if we are not idle, let the animations run and end
 	if (FSM.assert_state(FSM.states.IDLE)):
@@ -24,15 +24,15 @@ func shots():
 
 func movement():
 	if Input.is_action_pressed("ui_right"):
-		move_and_slide(Vector2(velocity, 0), Vector2())
+		return move_and_slide(Vector2(velocity, 0), Vector2())
 	if Input.is_action_pressed("ui_left"):
-		move_and_slide(Vector2(-velocity, 0), Vector2())
+		return move_and_slide(Vector2(-velocity, 0), Vector2())
 	if Input.is_action_pressed("ui_up"):
-		move_and_slide(Vector2(0, -velocity), Vector2())
+		return move_and_slide(Vector2(0, -velocity), Vector2())
 	if Input.is_action_pressed("ui_down"):
-		move_and_slide(Vector2(0, velocity), Vector2())
+		return move_and_slide(Vector2(0, velocity), Vector2())
 		
-func _on_face_hit(area_id, area, area_shape, self_shape):
+func _on_face_hit(_area_id, area, _area_shape, _self_shape):
 	.take_hit_on_health(area)
 	.set_state(FSM.events.HIT)
 	.kick_back(-2500)

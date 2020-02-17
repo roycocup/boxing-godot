@@ -32,7 +32,6 @@ zoom = Vector2( 2, 2 )
 editor_draw_limits = true
 
 [node name="UiManager" type="Node2D" parent="."]
-editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="UIAnimationPlayer" type="AnimationPlayer" parent="UiManager"]
@@ -55,7 +54,6 @@ one_shot = true
 autostart = true
 
 [node name="GameOverOverlay" type="Control" parent="."]
-editor/display_folded = true
 margin_left = 3.0
 margin_top = -2.0
 margin_right = 1024.0
@@ -72,7 +70,6 @@ valign = 1
 autowrap = true
 
 [node name="CountDownOverlay" type="Control" parent="."]
-editor/display_folded = true
 margin_left = 3.0
 margin_top = -2.0
 margin_right = 1024.0
