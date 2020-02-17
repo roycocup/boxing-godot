@@ -21,7 +21,8 @@ onready var Players: Dictionary = {'p1':$Canvas/Boxer, 'p2':$Canvas/Opponent}
 func _ready():
 	set_process(true)
 	set_state(RUNNING)
-	$Audio/CrowdBackground.play()
+	if sound_on: 
+		$Audio/CrowdBackground.play()
 	if round_on == true:
 		set_state(ROUND_START)
 	$Timer.start(round_time)

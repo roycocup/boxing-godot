@@ -37,5 +37,6 @@ func _on_face_hit(_area_id, area, _area_shape, _self_shape):
 	.set_state(FSM.events.HIT)
 	.kick_back(-2500)
 	$Player.play("Hit")
-	if world.sound_on: $AudioPlayer.play()
+	if world.sound_on: 
+		$AudioPlayer.play()
 	ScoreMan.update(player_data)
