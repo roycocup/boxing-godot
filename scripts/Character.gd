@@ -10,7 +10,7 @@ onready var score = world.scoreManager.get_score_map()
 var player_data = {}
 var frame = 0
 var elapsed_time = 0
-export var initial_cooldown = 1
+export var initial_cooldown = 0.5
 var cooldown = initial_cooldown
 signal character_hit
 

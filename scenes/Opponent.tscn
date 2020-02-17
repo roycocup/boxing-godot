@@ -137,6 +137,7 @@ extents = Vector2( 32.4073, 30.5645 )
 [node name="Opponent" type="KinematicBody2D"]
 rotation = 3.14159
 script = ExtResource( 1 )
+initial_cooldown = 5.0
 
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 1024
