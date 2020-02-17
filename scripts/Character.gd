@@ -145,4 +145,4 @@ func is_cool():
 	return true
 
 func reset_cooldown():
-	cooldown = initial_cooldown
+	cooldown = initial_cooldown	

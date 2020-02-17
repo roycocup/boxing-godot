@@ -2,6 +2,8 @@ Todo:
 
   AI:
     ☐ Harder opponent
+      ☐ Chase needs to be slighly more clever to get in punches
+      ☐ cooldown needs to be reset but stopping. Check `Fighters` item in this list about cooldown.
   
   Android:
     ☐ General controls for mobile
@@ -30,6 +32,7 @@ Todo:
     ☐ Change the visual of the players back to black & white
     ☐ Invert players 
     ☐ Hit explosion and effects
+    ☐ Cooldown needs to be triggered from punches and stops countdown when the character is cool. 
 
   Audio:
     ✔ In game audience sounds @started(20-02-17 14:50) @done(20-02-17 16:16) @lasted(1h26m45s)

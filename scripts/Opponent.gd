@@ -1,12 +1,9 @@
 extends "res://scripts/Character.gd"
 
-onready var AI = preload("res://scripts/AI.gd").new()
 var pname = 'p2'
-
 
 func _ready():
 	player_data['name'] = pname
-	AI._ready(player_data)
 
 func _physics_process(_delta):
 	# only move or throw punches if you are idle and not doing any other thing
@@ -54,7 +51,7 @@ func chase():
 	var opponent_pos = world.Players['p1'].position
 	var dist = opponent_pos - position
 	var direction = dist.normalized()
-	return move_and_slide(direction * velocity, Vector2())
+	move_and_slide(direction * velocity, Vector2())
 
 func evade():
 	var opponent_pos = world.Players['p1'].position
