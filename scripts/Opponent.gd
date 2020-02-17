@@ -3,6 +3,7 @@ extends "res://scripts/Character.gd"
 onready var AI = preload("res://scripts/AI.gd").new()
 var pname = 'p2'
 
+
 func _ready():
 	player_data['name'] = pname
 	AI._ready(player_data)
@@ -10,24 +11,27 @@ func _ready():
 func _physics_process(_delta):
 	# only move or throw punches if you are idle and not doing any other thing
 	if (FSM.current_state == FSM.states.IDLE):
-		animate()
 		movement()
 		shots()
+		animate()
 	if (FSM.current_state == FSM.states.PAUSE):
 		animate()
 		
 
 func shots():
-	var opponent_pos = world.Players['p1'].position
-	var dist = opponent_pos - position
-	# var direction = dist.normalized()
-	if (abs(dist.x) < 120):
-		if (dist.y < 0):
-			.set_state(FSM.events.LEFT)
-		elif (dist.y > 1):
-			.set_state(FSM.events.RIGHT)
-		else:
-			.random_option([.set_state(FSM.events.LEFT), .set_state(FSM.events.RIGHT)])
+	if .is_cool():
+		.reset_cooldown()
+		var opponent_pos = world.Players['p1'].position
+		var dist = opponent_pos - position
+		# var direction = dist.normalized()
+		if (abs(dist.x) < 120):
+			if (dist.y < 0):
+				.set_state(FSM.events.LEFT)
+			elif (dist.y > 1):
+				.set_state(FSM.events.RIGHT)
+			else:
+				.random_option([.set_state(FSM.events.LEFT), .set_state(FSM.events.RIGHT)])
+		
 
 func movement():
 	if (is_winning()):

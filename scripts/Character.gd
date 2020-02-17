@@ -9,6 +9,9 @@ onready var scoreMananager = world.scoreManager
 onready var score = world.scoreManager.get_score_map()
 var player_data = {}
 var frame = 0
+var elapsed_time = 0
+export var initial_cooldown = 1
+var cooldown = initial_cooldown
 signal character_hit
 
 
@@ -54,21 +57,20 @@ func init_states():
 	
 	FSM.current_state = FSM.states.IDLE
 
-func _physics_process(_delta):
+func _physics_process(delta):
+	elapsed_time = 0
 	frame_count()
 	if (FSM.assert_state(FSM.states.IDLE)):
 		movement()
 		shots()
 		animate()
+	elapsed_time = delta
 
 func shots():
 	pass
 
 func movement():
 	pass
-
-func kick_back(amount):
-	return move_and_slide(Vector2(amount,0))
 		
 func animate():
 	# Character basic properties	
@@ -85,7 +87,10 @@ func animate():
 		FSM.states.PAUSE:
 			if not $Player.is_playing():
 				$Player.play("Idle")
-		
+
+func kick_back(amount):
+	return move_and_slide(Vector2(amount,0))
+
 func character_is_moving():
 	return FSM.assert_state(FSM.states.HIT) or FSM.assert_state(FSM.states.LEFT) or FSM.assert_state(FSM.states.RIGHT)
 	
@@ -128,3 +133,16 @@ func take_hit_on_health(area):
 	emit_signal("character_hit")
 	var other = get_other_boxer_from_collision(area)	
 	healthpoints -= other.power
+
+func get_elapsed_time():
+	return elapsed_time
+
+
+func is_cool():
+	if cooldown > 0:
+		cooldown = cooldown - get_elapsed_time()
+		return false
+	return true
+
+func reset_cooldown():
+	cooldown = initial_cooldown
