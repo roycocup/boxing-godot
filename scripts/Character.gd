@@ -5,10 +5,11 @@ var hit = false
 var canvas = null
 onready var FSM = preload("res://scripts/FSM.gd").new()
 onready var world = get_tree().get_root().get_node("World")
-onready var ScoreMan = world.score
-onready var score = world.score.get_score_map()
+onready var scoreMananager = world.scoreManager
+onready var score = world.scoreManager.get_score_map()
 var player_data = {}
 var frame = 0
+signal character_hit
 
 
 # Character basic properties
@@ -124,5 +125,6 @@ func get_other_boxer_from_collision(area):
 		return 0
 
 func take_hit_on_health(area):
-	var other = get_other_boxer_from_collision(area)
+	emit_signal("character_hit")
+	var other = get_other_boxer_from_collision(area)	
 	healthpoints -= other.power

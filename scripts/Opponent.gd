@@ -70,4 +70,4 @@ func _on_face_hit(_area_id, area, _area_shape, _self_shape):
 	$Player.play("Hit")
 	if world.sound_on: 
 		$Punch.play()
-	ScoreMan.update(player_data)
+	scoreMananager.update(player_data)

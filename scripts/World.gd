@@ -13,7 +13,7 @@ export var round_time: int = 90
 
 var fsm = load('res://scripts/FSM.gd').new()
 var helper = load('res://scripts/Helper.gd').new()
-var score = load('res://scripts/ScoreManager.gd').new()
+var scoreManager = load('res://scripts/ScoreManager.gd').new()
 onready var uiManager: Node = $UiManager
 onready var audioManager: Node = $AudioManager
 onready var Players: Dictionary = {'p1':$Canvas/Boxer, 'p2':$Canvas/Opponent}
@@ -42,8 +42,8 @@ func _process(delta : float):
 			continue
 		_:
 			update_state()
-			score.save()
-			uiManager._update(score.get_score_map(), $Timer)
+			scoreManager.save()
+			uiManager._update(scoreManager.get_score_map(), $Timer)
 
 func set_state(new_state :int):
 	State = new_state
@@ -72,7 +72,7 @@ func start_round():
 	if sound_on: 
 		$AudioManager/Bell.play()
 	set_state(RUNNING)
-	
+
 func do_game_over():
 	pause_players()
 	uiManager.show_game_over()
