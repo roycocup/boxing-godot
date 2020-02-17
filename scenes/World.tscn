@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://scripts/UiManager.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://audio/ringbell.ogg" type="AudioStream" id=7]
 [ext_resource path="res://fonts/AtariST8x16SystemFont.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://fonts/CountDown.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://audio/background-crowd.ogg" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 0
@@ -24,6 +25,8 @@ __meta__ = {
 "_edit_horizontal_guides_": [ 300.745 ],
 "_edit_vertical_guides_": [ 512.758 ]
 }
+sound_on = true
+round_time = 10
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512.544, 304.524 )
@@ -43,15 +46,10 @@ anims/GameOver = ExtResource( 4 )
 [node name="Canvas" parent="." instance=ExtResource( 6 )]
 position = Vector2( 506.187, 301.092 )
 
-[node name="Bell" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
-volume_db = -10.0
-
 [node name="Timer" type="Timer" parent="."]
 process_mode = 0
 wait_time = 10.0
 one_shot = true
-autostart = true
 
 [node name="GameOverOverlay" type="Control" parent="."]
 margin_left = 3.0
@@ -117,5 +115,14 @@ text = "Box!"
 align = 1
 valign = 1
 autowrap = true
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="CrowdBackground" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 10 )
+
+[node name="Bell" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 7 )
+volume_db = -10.0
 [connection signal="playing_finished" from="UiManager" to="." method="_on_UiManager_playing_finished"]
 [connection signal="animation_finished" from="UiManager/UIAnimationPlayer" to="UiManager" method="_on_UIAnimationPlayer_animation_finished"]
