@@ -16,14 +16,14 @@ func build_tree():
 func get_relative_status():
 	return 'winning'
 
-func _ready(player_data):
+func _ready(_player_data):
 	init_cache()
 	build_tree()
 	Cache.save(data)
 
 func _process():
 	# if started, chase. if winning, chase. if losing, evade.
-	var status = get_relative_status()
+	get_relative_status()
 	
 
 
