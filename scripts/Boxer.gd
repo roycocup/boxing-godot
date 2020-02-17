@@ -24,13 +24,13 @@ func shots():
 
 func movement():
 	if Input.is_action_pressed("ui_right"):
-		return move_and_slide(Vector2(velocity, 0), Vector2())
+		move_and_slide(Vector2(velocity, 0), Vector2())
 	if Input.is_action_pressed("ui_left"):
-		return move_and_slide(Vector2(-velocity, 0), Vector2())
+		move_and_slide(Vector2(-velocity, 0), Vector2())
 	if Input.is_action_pressed("ui_up"):
-		return move_and_slide(Vector2(0, -velocity), Vector2())
+		move_and_slide(Vector2(0, -velocity), Vector2())
 	if Input.is_action_pressed("ui_down"):
-		return move_and_slide(Vector2(0, velocity), Vector2())
+		move_and_slide(Vector2(0, velocity), Vector2())
 		
 func _on_face_hit(_area_id, area, _area_shape, _self_shape):
 	.take_hit_on_health(area)

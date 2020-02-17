@@ -31,5 +31,5 @@ func show_count_down():
 	if !player.is_playing():
 		player.play('CountDown')
 
-func _on_UIAnimationPlayer_animation_finished(anim_name):
+func _on_UIAnimationPlayer_animation_finished(_anim_name):
 	emit_signal('playing_finished')

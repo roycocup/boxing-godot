@@ -5,16 +5,17 @@ Todo:
     ✔ Make hurtboxes smaller, like just the tip of the nose @done (23/02/2019, 08:39:20)
     ✔ FSM for opponent @done (23/02/2019, 08:39:23)
     ✔ AI Opponent @done (23/02/2019, 08:39:25)
-    ☐ Stamina levels
+    ✘ Stamina levels @cancelled(20-02-17 14:27)
       ✔ Have health levels affected by punches @done (03/03/2019, 13:39:21)
-      ☐ punch speed (animation) changes
-      ☐ indication on the punch power
-        ☐ isnt power = stamina?
-      ☐ Switch to hit/health points
-      ☐ Super punch!
-    ☐ Hit explosion and effects
-    ☐ Rename enemy to opponent
+      ✘ punch speed (animation) changes @cancelled(20-02-17 14:27)
+      ✘ indication on the punch power @cancelled(20-02-17 14:27)
+        ✘ isnt power = stamina? @cancelled(20-02-17 14:27)
+      ✘ Switch to hit/health points @cancelled(20-02-17 14:27)
+      ✘ Super punch! @cancelled(20-02-17 14:27)    
+    ✔ Rename enemy to opponent @done(20-02-17 14:32)
+    ☐ Change the visual of the players back to black & white
     ☐ Invert players 
+    ☐ Hit explosion and effects
 
   Android:
     ☐ General controls for mobile
@@ -24,12 +25,13 @@ Todo:
     ☐ Logo and Flash intro
     ☐ Start, Quit
     ☐ Options if any
+
   
-  Game:
-    ☐ Audio
-    ✔ Punching sounds @done (23/02/2019, 08:39:34)
-    ✔ Round & start Bell @done (23/02/2019, 08:39:36)
-    ✔ Scoring system @done (23/02/2019, 08:39:39)
+  Audio:
+    ☐ Sound on each number of countdown
+    ☐ Winner screen sound
+    ☐ Main Menu sounds and music
+    ☐ In game audience sounds
   
   Logic :
     ✔ Game start in 1,2,3 @done (02/03/2019, 20:18:50)
