@@ -14,10 +14,10 @@ onready var p2_stats: Node = hud.get_node('p2_Stats')
 func _ready():
 	player = $UIAnimationPlayer
 
-func _process(delta: float):
+func _process(_delta: float):
 	pass
 
-func _update(score: Dictionary, timer : Timer):
+func _update(score: Dictionary, timer: Timer):
 	var t = helper.get_time_left_str(timer)
 	time.set_text(t)
 	p1_score.set_text(str(score['p1']))
