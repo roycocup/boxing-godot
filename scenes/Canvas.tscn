@@ -63,7 +63,7 @@ modulate = Color( 1, 1, 1, 0 )
 shape = SubResource( 3 )
 
 [node name="bottom" type="StaticBody2D" parent="Ropes"]
-position = Vector2( 9.35989, 372.49 )
+position = Vector2( 8.19357, 330.501 )
 scale = Vector2( 15.0041, 0.45125 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ropes/bottom"]
@@ -72,6 +72,8 @@ shape = SubResource( 4 )
 
 [node name="Boxer" parent="." instance=ExtResource( 2 )]
 position = Vector2( -85.9183, 0 )
+scale = Vector2( 0.8, 0.8 )
 
 [node name="Opponent" parent="." instance=ExtResource( 3 )]
 position = Vector2( 95, 0.000121554 )
+scale = Vector2( 0.8, 0.8 )
