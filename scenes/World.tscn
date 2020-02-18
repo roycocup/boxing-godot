@@ -30,13 +30,6 @@ __meta__ = {
 "_edit_horizontal_guides_": [ 300.745 ],
 "_edit_vertical_guides_": [ 512.758 ]
 }
-sound_on = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 512.544, 304.524 )
-current = true
-zoom = Vector2( 2, 2 )
-editor_draw_limits = true
 
 [node name="UiManager" type="Node2D" parent="."]
 script = ExtResource( 2 )
@@ -47,8 +40,14 @@ anims/GameOver = ExtResource( 4 )
 
 [node name="Hud" parent="." instance=ExtResource( 5 )]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 384, 215 )
+current = true
+editor_draw_limits = true
+
 [node name="Canvas" parent="." instance=ExtResource( 6 )]
-position = Vector2( 537, 363 )
+position = Vector2( 386, 245 )
+scale = Vector2( 0.505569, 0.505569 )
 
 [node name="Timer" type="Timer" parent="."]
 process_mode = 0

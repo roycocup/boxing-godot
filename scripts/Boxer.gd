@@ -13,7 +13,7 @@ func _physics_process(_delta):
 		animate()
 	if (FSM.assert_state(FSM.states.PAUSE)):
 		animate()
-	
+		
 func shots():
 	if Input.is_action_just_pressed("fire_1"):
 		.set_state(FSM.events.LEFT)
@@ -40,3 +40,12 @@ func _on_face_hit(_area_id, area, _area_shape, _self_shape):
 	if world.sound_on: 
 		$Punch.play()
 	scoreMananager.update(player_data)
+
+func _input(event):
+   # Mouse in viewport coordinates
+   if event is InputEventMouseButton:
+	   print("Mouse Click/Unclick at: ", event.position)
+   elif event is InputEventMouseMotion:
+	   print("Mouse Motion at: ", event.position)
+   # Print the size of the viewport
+   print("Viewport Resolution is: ", get_viewport_rect().size)
