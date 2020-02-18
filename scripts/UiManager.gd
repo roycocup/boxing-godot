@@ -2,7 +2,7 @@ extends Node2D
 
 var helper: Node = load('res://scripts/Helper.gd').new()
 var player: AnimationPlayer
-# signal playing_finished
+signal playing_finished
 
 onready var hud: Node = get_tree().get_root().get_node('World/Hud/PanelContainer/HBoxContainer')
 onready var time: Node = hud.get_node('time')
@@ -31,5 +31,5 @@ func show_count_down():
 	if !player.is_playing():
 		player.play('CountDown')
 
-# func _on_UIAnimationPlayer_animation_finished(_anim_name):
-# 	emit_signal('playing_finished')
+func _on_UIAnimationPlayer_animation_finished(_anim_name):
+	emit_signal('playing_finished')

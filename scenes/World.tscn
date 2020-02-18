@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://scripts/UiManager.gd" type="Script" id=2]
@@ -24,12 +24,18 @@ font_data = ExtResource( 8 )
 size = 0
 font_data = ExtResource( 9 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 59
+font_data = ExtResource( 8 )
+
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 300.745 ],
 "_edit_vertical_guides_": [ 512.758 ]
 }
+sound_on = true
+round_on = true
 
 [node name="UiManager" type="Node2D" parent="."]
 script = ExtResource( 2 )
@@ -55,16 +61,15 @@ wait_time = 10.0
 one_shot = true
 
 [node name="GameOverOverlay" type="Control" parent="."]
-margin_left = 3.0
-margin_top = -2.0
-margin_right = 1024.0
-margin_bottom = 605.0
+margin_left = -106.0
+margin_top = -43.0
+margin_right = 915.0
+margin_bottom = 564.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="GameOverOverlay"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 1 )
@@ -74,16 +79,15 @@ valign = 1
 autowrap = true
 
 [node name="CountDownOverlay" type="Control" parent="."]
-margin_left = 3.0
-margin_top = -2.0
-margin_right = 1024.0
-margin_bottom = 605.0
+margin_left = -119.0
+margin_top = -43.0
+margin_right = 902.0
+margin_bottom = 564.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Three" type="Label" parent="CountDownOverlay"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 2 )
@@ -121,6 +125,29 @@ text = "Box!"
 align = 1
 valign = 1
 autowrap = true
+
+[node name="PauseOverlay" type="Control" parent="."]
+visible = false
+margin_left = 320.0
+margin_top = 213.0
+margin_right = 360.0
+margin_bottom = 253.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PauseOverlay"]
+margin_left = -2.0
+margin_top = 4.0
+margin_right = 178.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 3 )
+text = "Paused"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AudioManager" type="Node2D" parent="."]
 script = ExtResource( 11 )

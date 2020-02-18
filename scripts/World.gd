@@ -4,6 +4,7 @@ const ROUND_START = 0
 const RUNNING = 1
 const GAME_OVER = 2
 const GAME_DONE = 3
+const PAUSE = 4
 
 var Level: int = 1
 var State = null
@@ -29,7 +30,6 @@ func _ready():
 	$Timer.start(round_time)
 		
 func _process(delta : float):
-	quit_by_esc()
 	match(get_state()):
 		GAME_DONE:
 			return
@@ -38,12 +38,22 @@ func _process(delta : float):
 		ROUND_START:
 			start_round()
 		RUNNING:
+			unpause_timer()
 			start_players()
 			continue
 		_:
 			update_state()
 			scoreManager.save()
 			uiManager._update(scoreManager.get_score_map(), $Timer)
+
+func _input(event):
+	if event is InputEventKey:
+		if Input.is_key_pressed(KEY_P):
+			check_pause()
+		if Input.is_key_pressed(KEY_Q):
+			check_resign()
+		if Input.is_action_pressed("exit"):
+			quit()
 
 func set_state(new_state :int):
 	State = new_state
@@ -56,11 +66,7 @@ func update_state():
 		set_state(GAME_OVER)
 
 func quit():
-	get_tree().quit()
-	
-func quit_by_esc():
-	if Input.is_action_pressed("exit"):
-		quit()
+	get_tree().quit()	
 
 func start_round():
 	pause_players()
@@ -91,4 +97,23 @@ func pause_players():
 		Players['p1'].set_state(fsm.events.PAUSE)
 	if !Players['p2'].assert_state(fsm.events.PAUSE):
 		Players['p2'].set_state(fsm.events.PAUSE)
+		
+func check_pause():
+	if get_state() == RUNNING or get_state() == PAUSE:
+		if get_state() != PAUSE:
+			set_state(PAUSE)
+			pause_players()
+			pause_timer()
+		else:
+			set_state(RUNNING)
 
+func pause_timer():
+	$PauseOverlay.visible = true
+	$Timer.paused = true
+
+func unpause_timer():
+	$PauseOverlay.visible = false
+	$Timer.paused = false
+
+func check_resign():
+		$Timer.stop()
