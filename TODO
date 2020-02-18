@@ -3,7 +3,8 @@ Todo:
   AI:
     ☐ Harder opponent
       ☐ Chase needs to be slighly more clever to get in punches
-      ☐ cooldown needs to be reset but stopping. Check `Fighters` item in this list about cooldown.
+      ☐ Cooldown needs to be reset but stopping. Check `Fighters` item in this list about cooldown.
+        ☐ requires HUD interface
   
   Android:
     ☐ General controls for mobile
