@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://scripts/UiManager.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://audio/crowdWow2.ogg" type="AudioStream" id=13]
 [ext_resource path="res://audio/kidsWow2.ogg" type="AudioStream" id=14]
 [ext_resource path="res://audio/kidsWow1.ogg" type="AudioStream" id=15]
+[ext_resource path="res://scenes/Mobile_UI.tscn" type="PackedScene" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 size = 0
@@ -34,8 +35,6 @@ __meta__ = {
 "_edit_horizontal_guides_": [ 300.745 ],
 "_edit_vertical_guides_": [ 512.758 ]
 }
-sound_on = true
-round_on = true
 
 [node name="UiManager" type="Node2D" parent="."]
 script = ExtResource( 2 )
@@ -45,6 +44,8 @@ anims/CountDown = ExtResource( 3 )
 anims/GameOver = ExtResource( 4 )
 
 [node name="Hud" parent="." instance=ExtResource( 5 )]
+
+[node name="Mobile_UI" parent="." instance=ExtResource( 16 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 384, 215 )

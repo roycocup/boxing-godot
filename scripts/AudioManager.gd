@@ -4,7 +4,8 @@ onready var world = get_tree().get_root().get_node("World")
 onready var scoreMananager = world.scoreManager
 	
 func _process(_delta):
-	check_wow_sounds()
+	if (world.is_sound_on()):
+		check_wow_sounds()
 
 
 func check_wow_sounds():

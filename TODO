@@ -34,6 +34,9 @@ Todo:
     ☐ Invert players 
     ☐ Hit explosion and effects
     ☐ Cooldown needs to be triggered from punches and stops countdown when the character is cool. 
+    ☐ Kick back needs adjusting @started(20-02-19 10:48)
+    ☐ Speed needs adjusting
+      ☐ Speed corelated to AI difficulty
 
   Audio:
     ✔ In game audience sounds @started(20-02-17 14:50) @done(20-02-17 16:16) @lasted(1h26m45s)

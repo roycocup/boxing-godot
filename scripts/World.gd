@@ -117,3 +117,6 @@ func unpause_timer():
 
 func check_resign():
 		$Timer.stop()
+
+func is_sound_on():
+	return sound_on
