@@ -67,7 +67,7 @@ func right_punch():
 	
 func _on_face_hit(_area_id, area, _area_shape, _self_shape):
 	.take_hit_on_health(area)
-	.kick_back(2500)
+	.kick_back(kickback_amount)
 	$Player.play("Hit")
 	if world.sound_on: 
 		$Punch.play()

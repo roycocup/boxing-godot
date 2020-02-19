@@ -77,3 +77,4 @@ scale = Vector2( 0.8, 0.8 )
 [node name="Opponent" parent="." instance=ExtResource( 3 )]
 position = Vector2( 95, 0.000121554 )
 scale = Vector2( 0.8, 0.8 )
+velocity = 150

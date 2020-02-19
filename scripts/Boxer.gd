@@ -1,7 +1,9 @@
 extends "res://scripts/Character.gd"
 
+var pname = 'p1'
+
 func _ready():
-	player_data['name'] = 'p1'
+	player_data['name'] = pname
 	._ready() # calling parent setup
 
 func _physics_process(_delta):
@@ -35,7 +37,7 @@ func movement():
 func _on_face_hit(_area_id, area, _area_shape, _self_shape):
 	.take_hit_on_health(area)
 	.set_state(FSM.events.HIT)
-	.kick_back(-2500)
+	.kick_back(-kickback_amount)
 	$Player.play("Hit")
 	if world.sound_on: 
 		$Punch.play()

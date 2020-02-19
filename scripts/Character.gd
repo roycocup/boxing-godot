@@ -20,6 +20,7 @@ export var velocity = 200
 export var stamina = 100
 export var power = 100
 export var healthpoints = 10000
+export var kickback_amount = 2000
 
 
 func _ready():
